@@ -13,4 +13,4 @@ activate venv in root folder
 
 install requirements.txt, THEN requirements2.txt (requirements2 MUST overwrite requirements1)
 
-keys and passwords available upon request
+keys and passwords available upon request OR manually setup the CSV files instead of using SQL
