@@ -2,7 +2,7 @@
 
 This is a website that: 
 
-1. Allows users to track their "Math Facts" and "Anagram Hunt" game scores, see leaderboards, create profiles, log-in/out, change passwords.
+1. Allows users to track their "Math Facts" and "Anagram Hunt" game scores, see leaderboards, create profiles, log-in/out, change passwords, and more.
 
 2. Allows administrators to run the site and alter every aspect of it via Django Admin.
 
