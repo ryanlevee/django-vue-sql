@@ -1,2 +1,7 @@
-# django-play2learn_website_project
-Project4
+# Django-based "Play2Learn" Website
+
+activate venv in root folder
+
+install requirements.txt, THEN requirements2.txt (requirements2 MUST overwrite requirements1)
+
+keys available upon request
