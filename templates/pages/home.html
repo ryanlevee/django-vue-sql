@@ -1,0 +1,38 @@
+{% extends "_base.html" %}
+{% load common_tags %}
+
+{% block title %}Home{% endblock %}
+{% block main %}
+ <main class="my-auto position-relative my-0 bg-dark bg-opacity-25">
+  <div class="bg-success bg-opacity-75 py-3 mb-5
+    border-top border-bottom border-2">
+    <div class="d-flex flex-column py-1 pb-0
+      bg-info bg-opacity-25 mx-auto">
+      <h2 class="home-container fw-normal display-6
+        text-uppercase text-center my-2">Welcome!</h2>
+    </div>
+  </div>
+  <section>
+    {% review_carousel %}
+  </section>
+  <section>
+    <div class="bg-success bg-opacity-75 py-3
+      mb-5 border-top border-bottom border-2">
+      <div class="main-container pb-4 d-flex
+        flex-column bg-info bg-opacity-25">
+        <h3 class="text-center mt-3">High Scores:</h3>
+        <div class="container-fluid d-flex">
+          <div class="row justify-content-center w-100">
+            <div class="col-3" style="width:20%">
+              {% angr_leader %}
+            </div>
+            <div class="col-3 text-end" style="width:20%">
+              {% math_leader %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

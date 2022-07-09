@@ -1,0 +1,26 @@
+{% block main %}
+
+<table class="mx-auto">
+  <p class="game-title h3">
+    <a href="{% url 'games:list' %}">
+      {{ game.title }}
+    </a>
+  </p>
+  <p class="h6">Player:
+    <span class="h4">
+      <a class="player text-decoration-none text-light text-lowercase h4"
+        href="{% url 'games:user' game.user.username %}?
+        order={{ order }}&direction={{ direction }}">
+        {{ game.user.username }}
+      </a>
+    </span>
+  </p>
+  <p class="h4">Score:
+    {{ game.score }}
+  </p>
+  <small>Date/Time:
+    {{ game.timestamp }}
+  </small>
+</table>
+
+{% endblock %}

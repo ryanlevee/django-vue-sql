@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+{% load common_tags %}
+
+{% block title %}Contact Us{% endblock %}
+{% block main %}
+
+<div class="card border-primary mx-auto mb-3 p-5 text-black"
+  style="max-width:45rem">
+  <h4 class="card-header text-center"
+    style="margin-bottom:1rem;padding-bottom:1rem">Contact Us</h4>
+  <form method="POST" class="post-form">
+    {% csrf_token %}
+    {{ form.email|as_crispy_field }}
+    {{ form.subject|as_crispy_field }}
+    {{ form.message|as_crispy_field }}
+    <button class="btn btn-success float-end mt-2">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

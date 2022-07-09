@@ -1,0 +1,49 @@
+<nav aria-label="pagination">
+    <ul class="pagination justify-content-center">
+      {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link"
+            href="?page=1&order={{ order }}&direction={{ direction }}
+              &q={{ request.GET.q }}">
+            &laquo; 1…
+          </a>
+        </li>
+        {% if page_obj.previous_page_number != 1 %}
+          <li class="page-item">
+            <a class="page-link"
+              href="?page={{ page_obj.previous_page_number }}
+                &order={{ order }}&direction={{ direction }}
+                &q={{ request.GET.q }}">
+                {{ page_obj.previous_page_number }}
+            </a>
+          </li>
+        {% endif %}
+      {% endif %}
+      <li class="page-item active">
+        <span class="page-link">
+          {{ page_obj.number }}
+        </span>
+      </li>
+      {% if page_obj.has_next %}
+        {% if page_obj.next_page_number
+          != page_obj.paginator.num_pages %}
+          <li class="page-item">
+            <a class="page-link"
+              href="?page={{ page_obj.next_page_number }}
+                &order={{ order }}&direction={{ direction }}
+                &q={{ request.GET.q }}">
+                {{ page_obj.next_page_number }}
+            </a>
+          </li>
+        {% endif %}
+        <li class="page-item">
+          <a class="page-link"
+            href="?page={{ page_obj.paginator.num_pages }}
+              &order={{ order }}&direction={{ direction }}
+              &q={{ request.GET.q }}">
+              …{{ page_obj.paginator.num_pages }} &raquo;
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>

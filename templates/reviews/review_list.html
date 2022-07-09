@@ -1,0 +1,40 @@
+
+{% extends "_base.html" %}
+{% load common_tags %}
+
+{% block title %}Leaderboard{% endblock %}
+{% block main %}
+<section class="position-relative bg-info
+  bg-opacity-10 border-bottom border-2">
+  <h2 class="text-center bg-info bg-opacity-25 py-3 my-2 mx-auto
+    p-0 w-100 border-top border-2 border-bottom border-1">Reviews</h2>
+  <div class="container my-0 p-0">
+    <div class="row p-0 m-0">
+      <div class="row col mx-4">
+        <table class="table table-striped bg-light">
+          <h4 class="font-weight-bold text-uppercase
+            mx-auto bg-success bg-opacity-25 my-0 py-2"></h4>
+          <tbody>
+            {% for review in review_list %}
+              <tr>
+                <td>
+                  <a class="text-decoration-none text-dark">
+                    {{ review.title }}</a>
+                </td>
+                <td>
+                  <a class="text-decoration-none text-dark">
+                    {{ review.message }}</a>
+                </td>
+                <td>
+                  <a class="text-decoration-none text-dark">
+                    {{ review.user }}</a>
+                </td>
+              </tr>
+            {% endfor %}
+          <tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

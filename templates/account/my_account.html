@@ -1,0 +1,45 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% load common_tags %}
+
+{% block title %}My Profile{% endblock title %}
+
+{% block main %}
+<div class="card border-primary mx-auto mb-3" style="max-width: 40rem">
+  <h4 class="card-header text-center">My Profile</h4>
+  <div class="card-body position-relative">
+    <form method="post" enctype="multipart/form-data" class="m-auto"
+      novalidate>
+      <div class="container">
+        <div class="row pb-3">
+          <div class="col-4">
+            <img {% if user.avatar and not form.avatar.errors %}
+              src="{{ user.avatar.url }}" {% else %}
+              src="{{ '../../static/images/default-avatar_xs.png' }}"
+              {% endif %} alt="default-avatar"
+              class="img-thumbnail mx-auto float-start" style="width:auto"/>
+          </div>
+          <div class="col">
+            {% csrf_token %}
+            {{ form.email|as_crispy_field}}
+            {{ form.username|as_crispy_field}}
+          </div>
+        </div>
+      </div>
+      <div class="container px-4">
+        {{ form.first_name|as_crispy_field}}
+        {{ form.last_name|as_crispy_field}}
+        <div>
+          {{ form.dob|as_crispy_field}}
+        </div>
+        {{ form.avatar|as_crispy_field}}
+        {% comment %} {{ form|crispy }} {% endcomment %}
+        <button class="form-control btn btn-primary p-2 mb-2">UPDATE</button>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer text-center">
+    <p><a href="{% url 'account_change_password' %}">Change Password</a></p>
+  </div>
+</div>
+{% endblock %}

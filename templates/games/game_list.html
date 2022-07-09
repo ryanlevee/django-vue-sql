@@ -1,0 +1,118 @@
+
+{% extends "_base.html" %}
+{% load common_tags %}
+{% block title %}Leaderboard{% endblock %}
+
+{% block main %}
+<section class="position-relative bg-info bg-opacity-10
+  border-bottom border-2">
+  <h2 class="text-center bg-info bg-opacity-25 py-3 my-2
+    mx-auto p-0 w-100 border-top border-2 border-bottom border-1
+    {% if 'games/user' in request.get_full_path %}
+    mb-4">Player Game Tracking</h2>
+    {% else %}
+    ">Leaderboards</h2>
+    {% endif %}
+  <div class="container my-0 mb-3 p-0">
+    <div class="row p-0 m-0">
+      <div class="leaderboard row col-xl mx-2">
+        <table class="table table-striped bg-light">
+          <h4 class="font-weight-bold text-uppercase mx-auto
+            bg-success bg-opacity-25 my-0 py-2">Math Facts
+          </h4>
+          <thead>
+            {% with order=request.GET.order dir=request.GET.direction %}
+              <tr>
+                <th><a class="text-decoration-none text-dark">Player
+                  </a></th>
+                <th><a class="text-decoration-none text-dark">Score
+                  </a></th>
+                <th><a class="text-decoration-none text-dark">Date/Time
+                  </a></th>
+                <th><a class="text-decoration-none text-dark">Operation
+                  </a></th>
+                <th><a class="text-decoration-none text-dark">Max Num
+                  </a></th>
+              </tr>
+            {% endwith %}
+          </thead>
+          <tbody>
+            {% for game in game_list %}
+              {% if game.game_title_id == 1 %}
+              <tr>
+                <td>
+                  <a href="{% url 'games:user' game.user.username %}?
+                    order={{ order }}&direction={{ direction }}">
+                    {{ game.user.username }}</a>
+                </td>
+                <td>
+                  <a class="text-decoration-none text-dark">
+                    {{ game.score }}</a>
+                </td>
+                <td>
+                  <a class="text-decoration-none text-dark">
+                    {{ game.timestamp }}</a>
+                </td>
+                <td class="text-center" style="width:100px">
+                  <a class="text-decoration-none text-dark">
+                    {{ game.operation }}</a>
+                </td>
+                <td class="text-center" style="width:92px">
+                  <a class="text-decoration-none text-dark">
+                    {{ game.max_number }}</a>
+                </td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          <tbody>
+        </table>
+      </div>
+      <div class="leaderboard row col-xl mx-2">
+        <table class="table table-striped bg-light">
+          <h4 class="font-weight-bold text-uppercase text-outline
+            mx-auto bg-danger bg-opacity-25 my-0 py-2">Anagram Hunt</h4>
+          <thead>
+            {% with order=request.GET.order dir=request.GET.direction %}
+              <tr>
+                <th><a class="text-decoration-none text-dark">Player
+                </a></th>
+                <th><a class="text-decoration-none text-dark">Score
+                </a></th>
+                <th><a class="text-decoration-none text-dark">Date/Time
+                </a></th>
+                <th><a class="text-decoration-none text-dark">Word Length
+                </a></th>
+              </tr>
+            {% endwith %}
+          </thead>
+          <tbody>
+            {% for game in game_list %}
+              {% if game.title == 'Anagram Hunt' %}
+              <tr>
+                <td style="width:200px">
+                  <a href="{% url 'games:user' game.user.username %}?
+                    order={{ order }}&direction={{ direction }}">
+                    {{ game.user.username }}</a>
+                </td>
+                <td style="width:60px">
+                  <a class="text-decoration-none text-dark">
+                    {{ game.score }}</a>
+                </td>
+                <td style="width:200px">
+                  <a class="text-decoration-none text-dark">
+                    {{ game.timestamp }}</a>
+                </td>
+                <td class="text-center" style="width:105px">
+                  <a class="text-decoration-none text-dark">
+                    {{ game.word_length }}</a>
+                </td>
+              </tr>
+              {% endif %}
+            {% endfor %}
+          <tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

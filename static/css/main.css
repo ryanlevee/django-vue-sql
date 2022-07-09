@@ -1,0 +1,162 @@
+* {
+  padding: 0%;
+  margin: 0;
+  text-decoration: none!important;
+  /* outline: 1px solid darkgray; */
+}
+
+.card {
+  border: 1px solid rgb(189, 189, 189)!important;
+}
+
+.card,
+.card label {
+  background-color: #ccd3da!important;
+}
+
+.card-header {
+  font-weight: normal;
+}
+
+a {
+  color: inherit!important;
+}
+.card {
+  color: black
+}
+
+.mb-3 {
+  margin-top: 1rem;
+}
+
+.p-5 {
+  padding: 2rem!important;
+}
+
+form * {
+  margin:0!important;
+}
+
+.form-label {
+  margin-bottom: 4px!important;
+}
+
+#div_id_username {
+  margin-bottom: 2px!important;
+}
+
+#hint_id_username {
+  font-size: .75rem!important;
+}
+
+.form-check {
+  margin: .4px 0!important;
+  padding-right: 2px!important;
+  padding-left: 10px!important;
+}
+
+.form-check-label {
+  margin-left: 5px!important;
+  vertical-align: middle!important;
+}
+
+.form-check-input {
+  margin-top: 7px!important;
+}
+
+.selectdatewidget  {
+  margin: 5px 5.26px!important;
+}
+
+.home-container {
+  text-shadow: 1px 1px black;
+}
+
+.main-container {
+  font-family: var(--bs-font-monospace);
+  text-shadow: none;
+}
+
+.game-title,
+.player {
+  font-family: var(--bs-body-font-family);
+  text-shadow: 1px 1px rgb(51, 51, 236);
+}
+
+button:hover,
+form:hover button {
+  background-color: none !important;
+}
+
+.dropdown  {
+  list-style: none!important;
+}
+
+.dropdown-menu *:hover,
+li:hover a,
+nav form:hover,
+tr:hover,
+ul > li:hover,
+li:hover a {
+  background-color: rgb(42, 45, 70) !important;
+}
+
+.dropdown-menu,
+li:hover ul li a {
+  background-color: #484D53!important;
+}
+
+table tr:hover {
+  background-color: skyblue!important;
+}
+
+tr a:hover {
+  color: hsl(198, 63%, 38%)!important;
+}
+
+.message {
+  background-color: palegoldenrod;
+  color: black;
+}
+
+.messagedebug {
+  background-color: slategray;
+  color: white;
+}
+.messageinfo {
+  background-color: azure;
+  color: darkblue;
+}
+
+.messagesuccess {
+  background-color: lightgreen;
+  color: darkgreen;
+}
+
+.messagewarning {
+  background-color: lightgoldenrodyellow;
+  color: darkgoldenrod;
+}
+
+.messageerror {
+  background-color: pink;
+  color: darkred;
+}
+
+#review-slideshow p {
+  font-size: 1.2rem!important;
+  text-shadow: .43px 1px rgb(33, 37, 75)!important;
+}
+
+.review-message {
+  padding-top: .5rem!important;
+  font-style: italic;
+}
+
+.review-user {
+  padding-bottom: 1rem!important;
+}
+
+.carousel-indicators {
+  margin: 0 1.3rem 1.5rem 0 !important;
+}

@@ -1,0 +1,71 @@
+{% extends "_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Work for Us!{% endblock %}
+{% block main %}
+<div class="card border-primary m-auto my-3 px-3 pt-3 pb-5"
+    style="max-width: 50rem">
+    <h2 class="text-center">Play2Learn Job Application</h2>
+  <form method="post" novalidate enctype="multipart/form-data"
+    class="container">
+      {% csrf_token %}
+      <div class="form-row d-flex">
+        <div class="form-group col px-3">
+          {{ form.job|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row d-flex">
+        <div class="form-group col-md-6 px-3">
+          {{ form.first_name|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 px-3">
+          {{ form.last_name|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row d-flex">
+        <div class="form-group col-md-6 px-3">
+          {{ form.email|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 px-3">
+          {{ form.website|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row d-flex">
+        <div class="form-group col-md-6 px-3">
+          {{ form.employment_type|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 px-3">
+          {{ form.desired_hourly_wage|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row d-flex">
+        <div class="form-group col-md-6 ps-4 pe-5">
+          {{ form.start_date|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 px-4">
+          {{ form.available_days|as_crispy_field  }}
+        </div>
+      </div>
+      <div class="form-row d-flex">
+        <div class="form-group col px-3">
+          {{ form.cover_letter|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row d-flex">
+        <div class="form-group col px-3">
+          {{ form.resume|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row d-flex">
+        <div class="form-group col px-4">
+          {{ form.confirmation|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row d-flex">
+        <div class="form-group col px-3">
+          <button class="form-control btn btn-success">Apply</button>
+        </div>
+      </div>
+  </form>
+</div>
+{% endblock %}
