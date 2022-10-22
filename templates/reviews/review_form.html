@@ -10,7 +10,7 @@
     style="margin-bottom:1rem;padding-bottom:1rem">Submit a Review</h4>
   <form method="POST" class="post-form">
     {% csrf_token %}
-    {{ form.title|as_crispy_field }}
+    {{ form.game_title|as_crispy_field }}
     {{ form.message|as_crispy_field }}
     <button class="btn btn-success float-end mt-2">Submit</button>
   </form>

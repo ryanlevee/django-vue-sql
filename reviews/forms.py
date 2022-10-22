@@ -4,7 +4,7 @@ from .models import Review
 class ReviewForm(ModelForm):
     class Meta:
         model = Review
-        fields = ['title', 'message']
+        fields = ['game_title', 'message']
         widgets = {
           'message': Textarea(
             attrs={'autofocus': True, 'rows': 10}

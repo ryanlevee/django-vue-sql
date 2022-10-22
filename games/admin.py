@@ -15,8 +15,8 @@ class ContactUsAdmin(DjangoGamesAdmin):
 @admin.register(Title)
 class TitleAdmin(DjangoGamesAdmin):
     model = Title
-    list_display = ['title']
-    list_filter = ['title']
+    list_display = ['game_title', 'id']
+    list_filter = ['game_title']
 
 
 @admin.register(Game)
@@ -26,7 +26,7 @@ class GameAdmin(DjangoGamesAdmin):
     date_hierarchy = 'timestamp'
     list_display = ['user', 'game_title', 'score',
                     'operation', 'max_number',
-                    'word_length', 'timestamp']
+                    'word_length', 'timestamp', 'game_title_id', 'user_id']
     list_filter = ['game_title', 'timestamp', 'user']
     ordering = ['-score']
     search_fields = ['user__username', 'score',

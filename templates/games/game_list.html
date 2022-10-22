@@ -1,5 +1,5 @@
-
 {% extends "_base.html" %}
+
 {% load common_tags %}
 {% block title %}Leaderboard{% endblock %}
 
@@ -15,7 +15,7 @@
     {% endif %}
   <div class="container my-0 mb-3 p-0">
     <div class="row p-0 m-0">
-      <div class="leaderboard row col-xl mx-2">
+      <div class="leaderboard row col-xl mx-2 h-25">
         <table class="table table-striped bg-light">
           <h4 class="font-weight-bold text-uppercase mx-auto
             bg-success bg-opacity-25 my-0 py-2">Math Facts
@@ -37,7 +37,7 @@
             {% endwith %}
           </thead>
           <tbody>
-            {% for game in game_list %}
+            {% for game in game_list|slice:":32" %}
               {% if game.game_title_id == 1 %}
               <tr>
                 <td>
@@ -67,7 +67,7 @@
           <tbody>
         </table>
       </div>
-      <div class="leaderboard row col-xl mx-2">
+      <div class="leaderboard row col-xl mx-2 h-25">
         <table class="table table-striped bg-light">
           <h4 class="font-weight-bold text-uppercase text-outline
             mx-auto bg-danger bg-opacity-25 my-0 py-2">Anagram Hunt</h4>
@@ -86,8 +86,8 @@
             {% endwith %}
           </thead>
           <tbody>
-            {% for game in game_list %}
-              {% if game.title == 'Anagram Hunt' %}
+            {% for game in game_list|slice:":32" %}
+              {% if game.game_title_id == 2 %}
               <tr>
                 <td style="width:200px">
                   <a href="{% url 'games:user' game.user.username %}?

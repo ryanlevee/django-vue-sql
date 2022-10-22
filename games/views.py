@@ -1,13 +1,16 @@
 import html
 
+from django.shortcuts import render
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
+
 from django.views.generic import (
     CreateView, DetailView, ListView, TemplateView
 )
 
 from common.utils.email import send_email
+
 from play2learn import settings
 from .forms import ContactForm
 from .models import Game, ContactUs
@@ -34,12 +37,11 @@ class ContactUsView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
 
         send_email(to, subject, content)
         print(data)
-        print(to, subject, content)
         return super().form_valid(form)
 
 
-class GameThanksView(TemplateView):
-    template_name = 'games/thanks.html'
+class AboutView(TemplateView):
+    template_name = 'games/about.html'
 
 
 class GameDetailView(DetailView):
@@ -52,7 +54,7 @@ class GamePlayView(TemplateView):
 
 class GameListView(ListView):
     model = Game
-    paginate_by = 34
+    paginate_by = 40
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -89,7 +91,7 @@ class GameListView(ListView):
 
     def get_order_fields(self):
         return {
-            'game': 'title',
+            # 'game': 'title',
             'game_title': 'game_title',
             'user': 'user__username',
             'score': 'score',

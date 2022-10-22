@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+
+{% block title %}Play{% endblock %}
+{% block main %}
+  <div class="container-fluid d-flex py-5 m-auto text-center" style="background-color:#47715E">
+    <div class="row justify-content-center w-100">
+        <div class="play-games-div hover:shadow-lg col-3 mx-5 pt-3 w-auto bg-info bg-opacity-75 border border-success border-1 border-top-0 border-start-0 rounded">
+          <a href="{% url 'play:anagram-play' %}">
+              <img src="../../static/images/anagram_hunt_logo_wtbg.png" class="rounded" width="350"/>
+              <p class="fs-4 pt-1" style="font-variant:small-caps;text-shadow:1px 1px gray">Play Anagram Hunt!</p></a>
+        </div>
+        <div class="play-games-div col-3 mx-5 pt-3 w-auto bg-danger bg-opacity-50 border border-secondary border-1 border-top-0 border-start-0 rounded">
+          <a href="{% url 'play:math-game' %}">
+              <img src="../../static/images/under_maintenance_art_wtbg.png" class="rounded" width="350"/>
+              <p class="fs-4 pt-1" style="font-variant:small-caps;text-shadow:1px 1px #585858">Play Math Challenge!</p></a>
+        </div>
+    </div>
+  </div>
+{% endblock %}

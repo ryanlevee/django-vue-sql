@@ -20,28 +20,25 @@ class ContactUs(models.Model):
 
 
 class Title(models.Model):
-    title = models.CharField(max_length=50)
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
-        related_name='title',
-        default=1
-    )
+    game_title = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.title
+        return self.game_title
 
     class Meta:
         verbose_name_plural = 'Titles'
-        ordering = ['title']
+        ordering = ['game_title']
 
 
 class Game(models.Model):
-    title = models.TextField()
-    score = models.SmallIntegerField()
-    operation = models.CharField(max_length=3, blank=True)
-    max_number = models.SmallIntegerField(blank=True)
-    word_length = models.SmallIntegerField(blank=True)
-    timestamp = models.DateTimeField()
+    Math_Facts = "Math Facts"
+    Anagram_Hunt = "Anagram Hunt"
+
+    GAME_CHOICES = [
+        (Math_Facts, "Math Facts"),
+        (Anagram_Hunt, "Anagram Hunt"),
+    ]
+
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
         related_name='games',
@@ -53,9 +50,16 @@ class Game(models.Model):
         related_name='games'
     )
 
-    def __str__(self):
-        return f'''{self.title, self.score, self.operation,
-                    self.max_number, self.word_length, self.timestamp}'''
+    title = models.TextField(choices=GAME_CHOICES, default=Math_Facts)
+    score = models.SmallIntegerField()
+    operation = models.CharField(max_length=3, blank=True)
+    max_number = models.SmallIntegerField(blank=True)
+    word_length = models.SmallIntegerField(blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    # def __str__(self):
+        # return f'''{self.title, self.score, self.operation,
+                    # self.max_number, self.word_length, self.timestamp}'''
 
     class Meta:
         verbose_name_plural = 'Leaderboard'

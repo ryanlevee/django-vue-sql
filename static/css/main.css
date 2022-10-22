@@ -160,3 +160,25 @@ tr a:hover {
 .carousel-indicators {
   margin: 0 1.3rem 1.5rem 0 !important;
 }
+
+.play-games-button-div {
+  width: 45%;
+  background-color:#ffba52;
+}
+
+.play-games-div,
+.play-games-button-div {
+  transition: transform .3s;
+}
+
+.play-games-div:hover,
+.play-games-button-div:hover {
+  transform: scale(1.02);
+}
+
+.play-games-button-div img {
+  transition: transform .3s;
+}
+.play-games-button-div:hover img {
+  transform: scale(1.07);
+}

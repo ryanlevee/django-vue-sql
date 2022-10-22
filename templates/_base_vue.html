@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+<!-- <!DOCTYPE html> -->
+{% block html %}
+<html lang="">
+<head>
+{% block head %}{{ block.super }}{% endblock %}
+<script defer src="http://localhost:8080/js/chunk-vendors.js"></script><script defer src="http://localhost:8080/js/app.js"></script></head>
+<body class="d-flex flex-column vh-100 bg-secondary text-light">
+	{% block header %}{{ block.super }}{% endblock header %}
+	<noscript>
+		<strong>We're sorry but vue-games doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+	</noscript>
+	<main class="vh-100 position-relative">
+		<div id="app" class="h-100 d-flex align-items-center"></div>
+		<div class="bg-div bg-secondary"></div>
+	<!-- built files will be auto injected -->
+	</main>
+{% block footer %}{{ block.super }}{% endblock footer %}
+</body>
+<style>
+	.bg-div {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		/* background: black; */
+		opacity: .5;
+		z-index: -1;
+	}
+
+	main {
+		z-index: 0;
+	}
+
+	footer {
+		z-index: 0;
+	}
+</style>
+</html>
+{% endblock html %}

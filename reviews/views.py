@@ -62,7 +62,7 @@ class ReviewListView(ListView):
 
     def get_order_fields(self):
         return {
-            'title': 'title',
+            'game_title': 'game_title',
             'user': 'user__username',
             'message': 'message',
             'default_key': 'user',

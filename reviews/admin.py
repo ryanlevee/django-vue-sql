@@ -9,8 +9,8 @@ from .models import Review
 @admin.register(Review)
 class ReviewAdmin(DjangoGamesAdmin):
     model = Review
-    list_display = ['message', 'user', 'title']
-    list_filter = ['title', 'user']
+    list_display = ['message', 'user', 'game_title']
+    list_filter = ['game_title', 'user']
     ordering = ['user']
 
     formfield_overrides = {

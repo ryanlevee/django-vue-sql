@@ -1,19 +1,18 @@
 
 {% block main %}
-
   <div id="review-slideshow" class="container-fluid carousel
-    carousel-dark slide w-75 min-vh-200" data-bs-ride="carousel">
+    carousel-dark slide w-75 min-vh-200 pt-5" data-bs-ride="carousel">
     <h1 class="display-5 d-block fs-3 fst-italic fw-normal
-      pb-0 mb-0 w-100 text-center">
+      pb-0 mb-0 w-100 text-center pt-2">
       Happy Gamers Say...
     </h1>
-    <div class="row carousel-inner pt-4 mt-1 pb-5">
+    <div class="row carousel-inner pt-4 mt-1 pb-4">
       {% for review in reviews %}
       {% cycle 'start' as slidestart silent %}
       {% cycle 'end' as slideend silent %}
       <div {% if forloop.first %} class="carousel-item
-        active text-center" data-bs-interval="6000" {% else %}
-        class="carousel-item text-center" data-bs-interval="10000"
+        active text-center" data-bs-interval="5000" {% else %}
+        class="carousel-item text-center" data-bs-interval="6000"
         {% endif %}>
         <h4 class="h4">{{ review.title }}</h4>
         <p class="review-message">"{{ review.message }}"</p>
@@ -32,5 +31,4 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
 {% endblock %}
