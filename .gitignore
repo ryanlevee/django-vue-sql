@@ -4,13 +4,11 @@
 backup.zip
 media/private
 static/dist
-
-*.pyc
-
-archive
-
 __pycache__
 migrations
+archive
+
+*.pyc
 
 play2learn/local_settings.py
 
