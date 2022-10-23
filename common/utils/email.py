@@ -9,7 +9,7 @@ def send_email(to, subject, content, sender='ryanlevee@gmail.com'):
     sg = sendgrid.SendGridAPIClient(api_key=settings.SENDGRID_API_KEY)
     mail = Mail(
         from_email=sender,
-        recipient_list=to,
+        # to_emails=to,
         subject=subject,
         html_content=content
     )
