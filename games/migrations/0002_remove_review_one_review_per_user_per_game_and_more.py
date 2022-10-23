@@ -13,10 +13,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveConstraint(
-            model_name='review',
-            name='one_review_per_user_per_game',
-        ),
+        # migrations.RemoveConstraint(
+        #     model_name='review',
+        #     name='one_review_per_user_per_game',
+        # ),
         migrations.AddField(
             model_name='title',
             name='user',
