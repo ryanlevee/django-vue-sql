@@ -22,7 +22,7 @@ class ContactUsView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('games:thanks')
 
     def form_valid(self, form):
-        data = form.cleaned_data
+        data = form.data
         to = settings.ADMIN_EMAIL
         subject = "Play2Learn 'Contact Us' Message Received"
         content = '''<p>Hey Admin!</p>
