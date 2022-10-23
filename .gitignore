@@ -13,8 +13,8 @@ __pycache__
 archive
 catalog
 mkdel*
-*.dump
-*pg_dump*
+# *.dump
+# *pg_dump*
 
 # *.pyc
 
