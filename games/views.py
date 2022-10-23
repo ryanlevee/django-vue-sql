@@ -28,6 +28,7 @@ class ContactUsView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
         content = '''<p>Hey Admin!</p>
             <p>Message details below:</p>
             <div>'''
+        sender = 'ryanlevee@gmail.com'
         for key, value in data.items():
             label = key.replace('_', ' ').title()
             entry = html.escape(str(value), quote=False)
@@ -35,7 +36,7 @@ class ContactUsView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
 
         content += '</div>'
 
-        send_email(to, subject, content)
+        send_email(to, subject, content, sender)
         print(data)
         return super().form_valid(form)
 
