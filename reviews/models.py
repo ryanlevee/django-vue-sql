@@ -18,6 +18,7 @@ class Review(models.Model):
     class Meta:
         constraints = [
             models.UniqueConstraint(
-                fields=['user', 'game_title'], name='one_review_per_user_per_game_title',
+                # fields=['user', 'game_title'], name='one_review_per_user_per_game_title',
+                fields=['user', 'game_title'], name='one_review_per_user_per_game',
             )
         ]
