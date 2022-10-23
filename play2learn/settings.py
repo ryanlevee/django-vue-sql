@@ -177,9 +177,6 @@ MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-# ]
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/' # Does not tell to look in 'static' folder
