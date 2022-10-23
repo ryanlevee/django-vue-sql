@@ -7,7 +7,9 @@ backup
 media/private
 static/dist
 __pycache__
-# migrations
+migrations
+migrations*
+*mkdel*
 archive
 catalog
 mkdel*
