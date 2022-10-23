@@ -40,6 +40,10 @@ class ContactUsView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
+class GameThanksView(TemplateView):
+    template_name = 'games/thanks.html'
+
+
 class AboutView(TemplateView):
     template_name = 'games/about.html'
 
