@@ -15,7 +15,7 @@
           <div class="col-4">
             <img {% if user.avatar and not form.avatar.errors %}
               src="{{ user.avatar.url }}" {% else %}
-              src="{{ '../../static/images/default-avatar_xs.png' }}"
+              src="{% static 'images/default-avatar_xs.png' %}"
               {% endif %} alt="default-avatar"
               class="img-thumbnail mx-auto float-start" style="width:auto"/>
           </div>
