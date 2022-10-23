@@ -65,6 +65,8 @@
 <style>
 	main {
 		background-image: url('../../../../../../static/images/lettercloud_wd_cmp.png');
+		/* background-image: url("{% static 'images/lettercloud_wd_cmp.png' %}"); */
+
 		background-size: 125vh;
 	}
 </style>
