@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'play2learn-rl.herokuapp.com',
+    'django-vue-sql.herokuapp.com',
     ]
 
 INTERNAL_IPS = [ # Necessary for the Debug Toolbar
