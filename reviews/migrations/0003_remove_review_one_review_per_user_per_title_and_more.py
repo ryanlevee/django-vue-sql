@@ -21,8 +21,8 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='reviews', to='games.game'),
             preserve_default=False,
         ),
-        # migrations.AddConstraint(
-        #     model_name='review',
-        #     constraint=models.UniqueConstraint(fields=('user', 'game_title'), name='one_review_per_user_per_game_title'),
-        # ),
+        migrations.AddConstraint(
+            model_name='review',
+            constraint=models.UniqueConstraint(fields=('user', 'game_title'), name='one_review_per_user_per_game_title'),
+        ),
     ]

@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('games', '0026_remove_title_user'),
-        # ('reviews', '0003_remove_review_one_review_per_user_per_title_and_more'),
+        ('reviews', '0003_remove_review_one_review_per_user_per_title_and_more'),
     ]
 
     operations = [
