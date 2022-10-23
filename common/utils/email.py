@@ -12,7 +12,7 @@ def send_email(to, subject, content, sender):
     sg = sendgrid.SendGridAPIClient(api_key=settings.SENDGRID_API_KEY)
     mail = Mail(
         # to_emails=to,
-        to_emails=to,
+        recipient=to,
         subject=subject,
         content=content,
         from_email=sender,
