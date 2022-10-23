@@ -30,6 +30,9 @@ INTERNAL_IPS = [ # Necessary for the Debug Toolbar
 ]
 
 INSTALLED_APPS = [
+    # Speed Up Heroku
+    'collectfast',
+
     # Built-in Django apps
     'django.contrib.admin',
     'django.contrib.admindocs',
@@ -54,9 +57,6 @@ INSTALLED_APPS = [
     'games.apps.GamesConfig',
     'reviews.apps.ReviewsConfig',
     'play.apps.PlayConfig',
-
-    # Speed Up Heroku
-    'collectfast',
 ]
 
 SITE_ID = 1
@@ -167,7 +167,7 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 STATICFILES_STORAGE = 'play2learn.storage_backends.StaticStorage'
-COLLECTFAST_STRATEGY = 'collectfast.strategies.storage_backends.FileSystemStrategy'
+COLLECTFAST_STRATEGY = 'collectfast.strategies.storage_backends.StaticStorageStrategy'
 DEFAULT_FILE_STORAGE = 'play2learn.storage_backends.PublicMediaStorage'
 PRIVATE_FILE_STORAGE = 'play2learn.storage_backends.PrivateMediaStorage'
 
