@@ -17,7 +17,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING:
 DEBUG = False
-SECRET_KEY = 'django-insecure-!t@qq@o2vxyfc-q_byajaj!k&qj#za2v@zu-450-7#@(c)ef)-'
 
 ALLOWED_HOSTS = [
     'django-vue-sql.herokuapp.com',
@@ -86,6 +85,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django-vue-sql.wsgi.application'
+# WSGI_APPLICATION = 'play2learn.wsgi.application'
 
 DATABASES = {
              'default' : dj_database_url.config()
