@@ -1,7 +1,7 @@
 asgiref==3.5.2
 beautifulsoup4==4.11.1
 boto3==1.24.12
-botocore
+botocore==1.27.12
 certifi==2022.6.15
 cffi==1.15.0
 charset-normalizer==2.0.12
@@ -30,7 +30,7 @@ Pillow==9.1.1
 psycopg2==2.9.3
 pycparser==2.21
 PyJWT==2.4.0
-python-dateutil
+python-dateutil==2.8.2
 python-http-client==3.3.7
 python3-openid==3.2.0
 requests==2.28.0
