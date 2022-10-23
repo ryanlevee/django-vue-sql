@@ -2,6 +2,7 @@
 .venv
 .vscode
 backup.zip
+backup_old.zip
 media/private
 static/dist
 __pycache__
