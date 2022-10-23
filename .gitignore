@@ -9,6 +9,7 @@ static/dist
 __pycache__
 migrations
 archive
+catalog
 
 *.pyc
 
