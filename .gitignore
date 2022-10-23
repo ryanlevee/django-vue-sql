@@ -13,8 +13,10 @@ __pycache__
 archive
 catalog
 mkdel*
+*.dump
+*pg_dump*
 
-*.pyc
+# *.pyc
 
 play2learn/local_settings.py
 
