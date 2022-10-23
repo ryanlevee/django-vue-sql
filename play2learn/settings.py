@@ -84,8 +84,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django-vue-sql.wsgi.application'
-# WSGI_APPLICATION = 'play2learn.wsgi.application'
+# WSGI_APPLICATION = 'django-vue-sql.wsgi.application'
+WSGI_APPLICATION = 'play2learn.wsgi.application'
 
 DATABASES = {
              'default' : dj_database_url.config()
