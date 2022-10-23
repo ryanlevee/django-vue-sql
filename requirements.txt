@@ -40,4 +40,4 @@ sqlparse==0.4.2
 starkbank-ecdsa==2.0.3
 tzdata==2022.1
 urllib3==1.26.9
-sendgrid==4
+sendgrid
