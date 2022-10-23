@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn django-vue-sql.wsgi
+web: gunicorn play2learn.wsgi
