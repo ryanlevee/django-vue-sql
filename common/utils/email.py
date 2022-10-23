@@ -14,4 +14,6 @@ def send_email(subject, content, sender='ryanlevee@gmail.com'):
         subject=subject,
         content=content
     )
-    return sg.send(mail)
+    # return sg.client.send.mail.post(
+    return sg.client.mail.send.post(mail)
+    # return sg.send(mail)
