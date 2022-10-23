@@ -3,6 +3,7 @@
 .vscode
 backup.zip
 backup_old.zip
+backup
 media/private
 static/dist
 __pycache__
