@@ -17,7 +17,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING:
 DEBUG = True
-SECRET_KEY = 'django-insecure-!t@qq@o2vxyfc-q_byajaj!k&qj#za2v@zu-450-7#@(c)ef)-'
+# SECRET_KEY = 'django-insecure-!t@qq@o2vxyfc-q_byajaj!k&qj#za2v@zu-450-7#@(c)ef)-'
+SECRET_KEY = 'nm6fz7i8i=qz6)x^yx%-=&406si38_x*&9fmtna!bm%&@9j#(1'
 
 ALLOWED_HOSTS = [
     # 'play2learn.herokuapp.com',
