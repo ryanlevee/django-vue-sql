@@ -9,7 +9,7 @@ from .models import Review
 @admin.register(Review)
 class ReviewAdmin(DjangoGamesAdmin):
     model = Review
-    list_display = ['message', 'user', 'game_title']
+    list_display = ['message', 'user', 'game_title', 'id']
     list_filter = ['game_title', 'user']
     ordering = ['user']
 

@@ -7,7 +7,7 @@ from .models import Game, ContactUs, Title
 @admin.register(ContactUs)
 class ContactUsAdmin(DjangoGamesAdmin):
     model = ContactUs
-    list_display = ['subject', 'email', 'message', 'timestamp']
+    list_display = ['subject', 'email', 'message', 'timestamp', 'id']
     list_filter = ['email', 'timestamp']
     ordering = ['-timestamp']
 
@@ -26,7 +26,7 @@ class GameAdmin(DjangoGamesAdmin):
     date_hierarchy = 'timestamp'
     list_display = ['user', 'game_title', 'score',
                     'operation', 'max_number',
-                    'word_length', 'timestamp', 'game_title_id', 'user_id']
+                    'word_length', 'timestamp', 'game_title_id', 'user_id', 'id']
     list_filter = ['game_title', 'timestamp', 'user']
     ordering = ['-score']
     search_fields = ['user__username', 'score',

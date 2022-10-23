@@ -6,7 +6,7 @@ from .models import Applicant, Job
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
     model = Job
-    list_display = ['title', 'created', 'updated']
+    list_display = ['title', 'created', 'updated', 'id']
     list_filter = ['title']
 
     def get_readonly_fields(self, request, obj=None):
@@ -18,7 +18,7 @@ class JobAdmin(admin.ModelAdmin):
 @admin.register(Applicant)
 class ApplicantAdmin(admin.ModelAdmin):
     model = Applicant
-    list_display = ['first_name', 'last_name', 'job', 'created', 'updated']
+    list_display = ['first_name', 'last_name', 'job', 'created', 'updated', 'id']
 
     def get_readonly_fields(self, request, obj=None):
         if obj:

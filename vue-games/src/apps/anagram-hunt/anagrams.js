@@ -1,5 +1,6 @@
 const anagrams = {
   5 : [
+  // highest score poss: 25
     [
       "abets",
       "baste",
@@ -54,6 +55,7 @@ const anagrams = {
     ]
   ],
   6 : [
+  // highest score poss: 25
     [
       "arrest",
       "rarest",
@@ -87,9 +89,22 @@ const anagrams = {
       "trades",
       "treads",
       "stared"
+    ],
+    [
+      "deigns",
+      "design",
+      "signed",
+      "singed"
+    ],
+    [
+      "enters",
+      "nester",
+      "resent",
+      "tenser"
     ]
   ],
   7 : [
+  // highest score poss: 25
     [
       "allergy",
       "gallery",
@@ -120,9 +135,28 @@ const anagrams = {
       "instead",
       "sainted",
       "stained"
-    ]
+    ],
+    [
+      "parties",
+      "pastier",
+      "pirates",
+      "traipse"
+    ],
+    [
+      "recused",
+      "reduces",
+      "rescued",
+      "secured",
+      "seducer"
+    ],
+    [
+      "aligned",
+      "dealing",
+      "leading"
+    ],
   ],
   8 : [
+  // highest score poss: 25
     [
       "parroted",
       "predator",
@@ -147,7 +181,40 @@ const anagrams = {
       "counters",
       "recounts",
       "trounces"
-    ]
+    ],
+    [
+      "decanter",
+      "cantered",
+      "recanted"
+    ],
+    [
+      "lameness",
+      "nameless",
+      "salesman"
+    ],
+    [
+      "designer",
+      "redesign",
+      "resigned"
+    ],
+    [
+      "arrogant",
+      "tarragon"
+    ],
+    [
+      "spawning",
+      "wingspan"
+    ],
+    [
+      "arrested",
+      "serrated",
+      "retreads",
+      "treaders"
+    ],
+    [
+      "discount",
+      "conduits"
+    ],
   ]
 }
 

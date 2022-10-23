@@ -69,23 +69,16 @@
               text-uppercase fs-5 text-light" href="#"
               id="navbar-dropdown" data-bs-toggle="dropdown"
               aria-expanded="false">
-              Reach Out
+              Submit
             </a>
             <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
               aria-labelledby="navbar-dropdown">
               <li>
                 <a class="dropdown-item text-uppercase fs-5 text-light"
-                  href="{% url 'games:contact' %}" style="padding:1rem">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item text-uppercase fs-5 text-light"
                   href="{% url 'reviews:review' %}" style="padding:1rem">
-                  Submit Game Review
+                  Game Review
                 </a>
               </li>
-              {% comment %} <div class="dropdown-divider"></div> {% endcomment %}
               <li>
                 <a class="dropdown-item text-uppercase fs-5 text-light"
                   href="{% url 'jobs:app' %}" style="padding:1rem">
@@ -172,16 +165,6 @@
       <div class="d-flex justify-content-between">
         <div class="row">
           <div class="col d-flex justify-content-between">
-{% comment %}
-            <a class="text-light px-3 my-auto text-uppercase
-              text-decoration-none" href="{% url 'jobs:app' %}">
-              mkdel-Work For Us!
-            </a>
-            <a class="text-light px-3 my-auto text-uppercase
-              text-decoration-none" href="{% url 'reviews:review' %}">
-              mkdel-Submit Review
-            </a>
-{% endcomment %}
             <a class="text-light px-3 my-auto text-uppercase
               text-decoration-none" href="{% url 'games:contact' %}">
               Contact
