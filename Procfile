@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn --pythonpath play2learn.wsgi
+web: gunicorn play2learn.wsgi
