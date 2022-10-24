@@ -1,2 +1,2 @@
---no-deps -r requirements1.5.txt
---no-deps -r requirements2.txt
+-r requirements1.5.txt
+-r requirements2.txt
