@@ -1,8 +1,8 @@
-# Django-based "Play2Learn" Website with SQL 
+# Django and Vue-based "Play2Learn" Website with SQL Database
 
 This is a website that: 
 
-1. Allows users to track their "Math Facts" and "Anagram Hunt" game scores, see leaderboards, create profiles, log-in/out, change passwords, and more.
+1. Allows users to play games, track their "Math Facts" and "Anagram Hunt" game scores, see leaderboards, create profiles, log-in/out, change passwords, and more.
 
 2. Allows administrators to run the site and alter every aspect of it via Django Admin.
 
