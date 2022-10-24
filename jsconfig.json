@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "baseUrl": "./",
+    "baseUrl": "./vue-games/",
     "moduleResolution": "node",
     "paths": {
       "@/*": [
-        "src/*"
+        "vue-games/src/*"
       ]
     },
     "lib": [
