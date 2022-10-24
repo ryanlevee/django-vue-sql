@@ -93,13 +93,13 @@ form:hover button {
 }
 
 @media (max-width:1000px) {
-  .nav a {
+  .navbar-nav a {
     font-size: large!important;
   }
 }
 
 @media (max-width:832px) {
-  .nav a {
+  .navbar-nav a {
     font-size: medium!important;
   }
 }

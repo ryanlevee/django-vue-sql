@@ -37,7 +37,7 @@
               <img src="{% static 'images/logo.png' %}" alt="Logo"
                 class="d-none d-xxl-block"
                 style="min-width:105%;max-width:120%;
-                  margin:2% 0 0 -7.5%" />
+                  margin:1.5% 0 0 -7.5%" />
               <img src="{% static 'images/logo.png' %}" alt="Logo"
                 class="d-none d-md-block d-xxl-none"
                 style="min-width:110%;max-width:115%;
@@ -47,25 +47,25 @@
                 style="min-width:105%;max-width:150%;
                   margin:0% 0 0 -10.5%" />
             </a>
+          </div>
         </div>
-      </div>
-          <div class="d-md-none container-sm-fluid">
-            <div class="row w-100">
-              <div class="d-block d-sm-none col col-md-2 text-start">
-                <p class="display-6 my-auto fw-normal">Play2Learn</p>
-              </div>
-              <div class="col col-md-9 text-end">
-                <button class="navbar-toggler" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#navbar-content"
-                  aria-controls="navbar-content" aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-              </div>
+        <div class="d-md-none container-sm-fluid mx-0 px-0">
+          <div class="row w-100 mx-0 px-0">
+            <div class="d-block d-sm-none col col-md-2 text-start">
+              <p class="display-6 my-auto fw-normal">Play2Learn</p>
+            </div>
+            <div class="col col-md-9 mx-0 px-0 text-end">
+              <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbar-content"
+                aria-controls="navbar-content" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
             </div>
           </div>
+        </div>
         <div class="collapse navbar-collapse col-9 col-xxl-10 gx-0" id="navbar-content">
-          <ul class="nav nav-justified w-100">
+          <ul class="navbar-nav nav-justified w-100">
             <li class="nav-item py-1 border-0">
               <a class="nav-link text-uppercase fs-5 active"
                 aria-current="page"
@@ -114,9 +114,9 @@
                 aria-expanded="false">
                 Account
               </a>
-            {% if not user.is_authenticated %}
-            <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
+              <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
                 aria-labelledby="navbar-dropdown">
+                {% if not user.is_authenticated %}
                 <li>
                   <a class="dropdown-item text-uppercase fs-5 text-light"
                     href="{% url 'account_login' %}" style="padding:1rem">
@@ -139,8 +139,8 @@
                 aria-expanded="false">
                 Account
               </a> {% endcomment %}
-              <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
-                aria-labelledby="navbar-dropdown">
+              {% comment %} <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
+                aria-labelledby="navbar-dropdown"> {% endcomment %}
                 <li>
                   <a class="dropdown-item text-uppercase fs-5 text-light"
                     href="{% url 'my-account' %}" style="padding:1rem">
