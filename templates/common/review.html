@@ -14,7 +14,7 @@
         active text-center" data-bs-interval="5000" {% else %}
         class="carousel-item text-center" data-bs-interval="6000"
         {% endif %}>
-        <h4 class="h4">{{ review.title }}</h4>
+        {% comment %} <h4 class="h4">{{ review.game_title }}</h4> {% endcomment %}
         <p class="review-message">"{{ review.message }}"</p>
         <p class="review-user">- {{ review.user }}</p>
       </div>
