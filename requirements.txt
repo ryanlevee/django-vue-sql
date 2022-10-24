@@ -14,7 +14,7 @@ django-allauth==0.51.0
 django-crispy-forms==1.14.0
 django-environ==0.9.0
 django-private-storage==3.0
-django-sendgrid-v4
+django-sendgrid-v5
 django-storages==1.12.3
 docutils==0.18.1
 filetype==1.0.13
