@@ -1,24 +1,10 @@
 {% extends "_base.html" %}
-<!-- <!DOCTYPE html> -->
 {% block html %}
 <html lang="">
-<head>
-{% block head %}{{ block.super }}{% endblock %}
-<script defer src="http://localhost:8080/js/chunk-vendors.js"></script><script defer src="http://localhost:8080/js/app.js"></script></head>
-<body class="d-flex flex-column vh-100 bg-secondary text-light">
-	{% block header %}{{ block.super }}{% endblock header %}
-	<noscript>
-		<strong>We're sorry but vue-games doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-	</noscript>
-	<main class="vh-100 position-relative">
-		<div id="app" class="h-100 d-flex align-items-center"></div>
-		<div class="bg-div bg-secondary"></div>
-	<!-- built files will be auto injected -->
-	</main>
-{% block footer %}{{ block.super }}{% endblock footer %}
-</body>
-<style>
-	.bg-div {
+	<head>
+		{% block head %}{{ block.super }}{% endblock %}
+		<script defer="defer" src="http://localhost:8080/js/chunk-vendors.71b49a89.js"></script><script defer="defer" src="http://localhost:8080/js/app.0b952a47.js"></script><link href="http://localhost:8080/css/chunk-vendors.940bb80a.css" rel="stylesheet"><link href="http://localhost:8080/css/app.6ee29959.css" rel="stylesheet">
+	</head><body class="d-flex flex-column vh-100 bg-secondary text-light">{% block header %}{{ block.super }}{% endblock header %}<noscript><strong>We're sorry but vue-games doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><main class="vh-100 position-relative"><div id="app" class="h-100 d-flex align-items-center"></div><div class="bg-div bg-secondary"></div></main>{% block footer %}{{ block.super }}{% endblock footer %}</body><style>.bg-div {
 		position: absolute;
 		top: 0;
 		width: 100%;
@@ -34,7 +20,4 @@
 
 	footer {
 		z-index: 0;
-	}
-</style>
-</html>
-{% endblock html %}
+	}</style></html>{% endblock html %}
