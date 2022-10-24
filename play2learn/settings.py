@@ -13,12 +13,15 @@ import os
 from pathlib import Path
 import dj_database_url
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING:
 DEBUG = True
 # SECRET_KEY = 'django-insecure-!t@qq@o2vxyfc-q_byajaj!k&qj#za2v@zu-450-7#@(c)ef)-'
 SECRET_KEY = 'nm6fz7i8i=qz6)x^yx%-=&406si38_x*&9fmtna!bm%&@9j#(1'
+
+VUE_DIST = BASE_DIR / "vue-games" / "dist"  # vue-cli path - Django3 style
 
 ALLOWED_HOSTS = [
     # 'play2learn.herokuapp.com',
@@ -30,9 +33,6 @@ INTERNAL_IPS = [ # Necessary for the Debug Toolbar
 ]
 
 INSTALLED_APPS = [
-    # Speed Up Heroku
-    # 'collectfast',
-
     # Built-in Django apps
     'django.contrib.admin',
     'django.contrib.admindocs',

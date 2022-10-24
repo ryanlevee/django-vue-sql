@@ -5,7 +5,7 @@ backup.zip
 backup_old.zip
 backup
 media/private
-static/dist
+# static/dist
 __pycache__
 # migrations
 # migrations*
