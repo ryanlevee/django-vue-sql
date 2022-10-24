@@ -1,2 +1,2 @@
---nodeps -r requirements1.5.txt
---nodeps -r requirements2.txt
+--no-deps -r requirements1.5.txt
+--no-deps -r requirements2.txt
