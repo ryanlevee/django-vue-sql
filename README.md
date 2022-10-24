@@ -1,4 +1,4 @@
-# Django-based "Play2Learn" Website with SQL 
+# Django and Vue-based "Play2Learn" Website with SQL 
 
 This is a website that: 
 
