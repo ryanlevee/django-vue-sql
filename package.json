@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "postinstall": "cd vue-games && npm run build --verbose"
+    "postinstall": "cd vue-games && npm run build"
   }
 }
