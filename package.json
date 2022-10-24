@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "start": "vue-games/package.json"
+    "postinstall": "cd vue-games && npm install"
   }
-
 }
