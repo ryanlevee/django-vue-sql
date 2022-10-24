@@ -26,128 +26,149 @@
 <body class="d-flex flex-column vh-100 p-0 bg-secondary text-light">
 {% block header %}
 <header>
-  <nav class="navbar navbar-dark navbar-expand-lg
-    bg-dark bg-opacity-50 p-0" id="nav-header">
+  <nav class="navbar navbar-dark navbar-expand-md
+    bg-dark bg-opacity-50 p-0 m-0" id="nav-header">
     <div class="container-fluid">
-      <a id="play2learn-logo-link"
-        class="navbar-brand p-0 d-none d-sm-block"
-        href="{% url 'pages:homepage' %}">
-        <img src="{% static 'images/logo.png' %}" alt="Logo"
-          class="img-fluid" style="width:98%"/>
-      </a>
-      <div class="d-sm-none">
-        <p class="display-6 my-auto fw-normal">Play2Learn</p>
+      <div class="row w-100 p-0 m-0">
+        <div class="col-3 col-xxl-2 position-relative">
+          <div class="play2learn-logo-div position-absolute" style="">
+            <a id="play2learn-logo-link" class="navbar-brand p-0"
+            href="{% url 'pages:homepage' %}" style="">
+              <img src="{% static 'images/logo.png' %}" alt="Logo"
+                class="d-none d-xxl-block"
+                style="min-width:105%;max-width:120%;
+                  margin:2% 0 0 -7.5%" />
+              <img src="{% static 'images/logo.png' %}" alt="Logo"
+                class="d-none d-md-block d-xxl-none"
+                style="min-width:110%;max-width:115%;
+                  margin:3% 0 0 -9.5%" />
+              <img src="{% static 'images/logo.png' %}" alt="Logo"
+                class="d-none d-sm-block d-md-none"
+                style="min-width:105%;max-width:150%;
+                  margin:0% 0 0 -10.5%" />
+            </a>
+        </div>
       </div>
-      <button class="navbar-toggler" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navbar-content"
-        aria-controls="navbar-content" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-content">
-        <ul class="navbar-nav w-100 nav-justified">
-          <li class="nav-item p-1 border-0">
-            <a class="nav-link text-uppercase fs-5 active"
-              aria-current="page"
-              href="{% url 'pages:homepage' %}">Home
-            </a>
-          </li>
-          <li class="nav-item p-1 border-0">
-            <a class="nav-link text-uppercase fs-5 active"
-              aria-current="page"
-              href="{% url 'play:play' %}">Play!
-            </a>
-          </li>
-          <li class="nav-item p-1 border-0">
-            <a class="nav-link text-uppercase fs-5 active"
-              aria-current="page"
-              href="{% url 'games:list' %}">Leaderboard
-            </a>
-          </li>
-          <li class="nav-item dropdown p-1">
-            <a class="nav-link dropdown-toggle
-              text-uppercase fs-5 text-light" href="#"
-              id="navbar-dropdown" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Submit
-            </a>
-            <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
-              aria-labelledby="navbar-dropdown">
-              <li>
-                <a class="dropdown-item text-uppercase fs-5 text-light"
-                  href="{% url 'reviews:review' %}" style="padding:1rem">
-                  Game Review
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item text-uppercase fs-5 text-light"
-                  href="{% url 'jobs:app' %}" style="padding:1rem">
-                  Work For Us!
-                </a>
-              </li>
-            </ul>
-          </li>
-          {% if not user.is_authenticated %}
-          <li class="nav-item dropdown p-1">
-            <a class="nav-link dropdown-toggle
-              text-uppercase fs-5 text-light" href="#"
-              id="navbar-dropdown" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
-              aria-labelledby="navbar-dropdown">
-              <li>
-                <a class="dropdown-item text-uppercase fs-5 text-light"
-                  href="{% url 'account_login' %}" style="padding:1rem">
-                  Log in
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item text-uppercase fs-5 text-light"
-                  href="{% url 'account_signup' %}" style="padding:1rem">
-                  Sign Up
-                </a>
-              </li>
-            </ul>
-          </li>
-          {% else %}
-          <li class="nav-item dropdown p-1">
-            <a class="nav-link dropdown-toggle
-              text-uppercase fs-5 text-light" href="#"
-              id="navbar-dropdown" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              My Account
-            </a>
-            <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
-              aria-labelledby="navbar-dropdown">
-              <li>
-                <a class="dropdown-item text-uppercase fs-5 text-light"
-                  href="{% url 'my-account' %}" style="padding:1rem">
-                  My Profile
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item text-uppercase fs-5 text-light"
-                  href="{% url 'games:user' user.username %}?
-                  order={{ order }}&direction={{ direction }}"
-                  style="padding:1rem">
-                  My Game Tracking
-                </a>
-              </li>
-              <div class="dropdown-divider"></div>
-              <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                <button class="dropdown-item text-uppercase
-                  fs-6 text-light" style="">
-                  Log out
-                </button>
-              </form>
+          <div class="d-md-none container-sm-fluid">
+            <div class="row w-100">
+              <div class="d-block d-sm-none col col-md-2 text-start">
+                <p class="display-6 my-auto fw-normal">Play2Learn</p>
               </div>
-            </ul>
-          </li>
-          {% endif %}
-        </ul>
+              <div class="col col-md-9 text-end">
+                <button class="navbar-toggler" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#navbar-content"
+                  aria-controls="navbar-content" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        <div class="collapse navbar-collapse col-9 col-xxl-10 gx-0" id="navbar-content">
+          <ul class="nav nav-justified w-100">
+            <li class="nav-item py-1 border-0">
+              <a class="nav-link text-uppercase fs-5 active"
+                aria-current="page"
+                href="{% url 'pages:homepage' %}">Home
+              </a>
+            </li>
+            <li class="nav-item py-1 border-0">
+              <a class="nav-link text-uppercase fs-5 active"
+                aria-current="page"
+                href="{% url 'play:play' %}">Play!
+              </a>
+            </li>
+            <li class="nav-item py-1 border-0">
+              <a class="nav-link text-uppercase fs-5 active"
+                aria-current="page"
+                href="{% url 'games:list' %}">Leaderboard
+              </a>
+            </li>
+            <li class="nav-item dropdown py-1">
+              <a class="nav-link dropdown-toggle
+                text-uppercase fs-5 text-light" href="#"
+                id="navbar-dropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Submit
+              </a>
+              <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
+                aria-labelledby="navbar-dropdown">
+                <li>
+                  <a class="dropdown-item text-uppercase fs-5 text-light"
+                    href="{% url 'reviews:review' %}" style="padding:1rem">
+                    Game Review
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-uppercase fs-5 text-light"
+                    href="{% url 'jobs:app' %}" style="padding:1rem">
+                    Work For Us!
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown py-1">
+              <a class="nav-link dropdown-toggle
+                text-uppercase fs-5 text-light" href="#"
+                id="navbar-dropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Account
+              </a>
+            {% if not user.is_authenticated %}
+            <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
+                aria-labelledby="navbar-dropdown">
+                <li>
+                  <a class="dropdown-item text-uppercase fs-5 text-light"
+                    href="{% url 'account_login' %}" style="padding:1rem">
+                    Log in
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-uppercase fs-5 text-light"
+                    href="{% url 'account_signup' %}" style="padding:1rem">
+                    Sign Up
+                  </a>
+                </li>
+              </ul>
+            </li>
+            {% else %}
+            {% comment %} <li class="nav-item dropdown p-1">
+              <a class="nav-link dropdown-toggle
+                text-uppercase fs-5 text-light" href="#"
+                id="navbar-dropdown" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Account
+              </a> {% endcomment %}
+              <ul class="dropdown-menu bg-dark bg-opacity-50 w-100"
+                aria-labelledby="navbar-dropdown">
+                <li>
+                  <a class="dropdown-item text-uppercase fs-5 text-light"
+                    href="{% url 'my-account' %}" style="padding:1rem">
+                    My Profile
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-uppercase fs-5 text-light"
+                    href="{% url 'games:user' user.username %}?
+                    order={{ order }}&direction={{ direction }}"
+                    style="padding:1rem">
+                    My Scores
+                  </a>
+                </li>
+                <div class="dropdown-divider"></div>
+                <form method="post" action="{% url 'account_logout' %}">
+                  {% csrf_token %}
+                  <button class="dropdown-item text-uppercase
+                    fs-6 text-light">
+                    Log out
+                  </button>
+                </form>
+                </div>
+              </ul>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -201,7 +222,7 @@
         <div class="row">
           <div class="col">
             <div class="col">
-              <small class="d-block mb-1">
+              <small class="d-block mb-1 text-end">
                 &copy; 2022 Play2Learn. All rights are not reserved.
               </small>
             </div>

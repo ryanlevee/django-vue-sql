@@ -4,39 +4,55 @@
 
 {% block title %}Home{% endblock %}
 {% block main %}
- <main class="position-relative mt-2">
-  <div class="bg-success bg-opacity-75 py-3 border-top
-    border-bottom border-success border-2">
-    <div class="d-flex flex-column py-1 pb-0
-      bg-info bg-opacity-25 mx-auto">
-      <h2 class="home-container fw-normal display-6
-        text-uppercase text-center my-2">Welcome!</h2>
+<style>
+  .home-page-section > section {
+    margin: 0 0 1.1% 0
+  }
+  {% comment %}
+  * {
+    outline: 1px solid gray!important;
+  }
+  {% endcomment %}
+</style>
+<section class="home-page-section">
+ <section class="welcome">
+    <div class="bg-success bg-opacity-75 py-3 border-top
+      border-bottom border-success border-2">
+      <div class="d-flex flex-column py-1 pb-0
+        bg-info bg-opacity-25 mx-auto">
+        <h2 class="home-container fw-normal display-6
+          text-uppercase text-center my-2">Welcome!</h2>
+      </div>
     </div>
-  </div>
-  <div class="play-games-button-div my-3 mx-auto py-4 text-center rounded">
-      <a href="{% url 'play:play' %}">
-        <div class="mx-auto w-25">
+  </section>
+  <section class="play-games-button-section">
+    <div class="container mx-auto">
+      {% comment %} <div class="row" {% endcomment %}
+      <form action="{% url 'play:play' %}" class="row">
+        <button class="play-games-button col-7 mx-auto py-4 rounded border-0"
+          style="background-color:#ffbd5a;">
           <img src="{% static 'images/play_games_button_trn2.png' %}"
-            alt="play_games_button" class="w-100"/>
-        </div>
-      </a>
+            alt="play_games_button_image" class="img-fluid col-10 col-lg-3 col-sm-5" />
+        </button>
+      </form>
     </div>
-  <section class="bg-dark bg-opacity-25">
+  </section>
+  <section class="review-carousel-section bg-dark bg-opacity-25">
     {% review_carousel %}
   </section>
-  <section>
-    <div class="py-2 bg-secondary"></div>
-    <div class="bg-success bg-opacity-75 py-3
-      mb-2 border-top border-bottom border-success border-2">
-      <div class="main-container pb-4 d-flex
-        flex-column bg-info bg-opacity-25">
-        <h3 class="text-center mt-3">High Scores:</h3>
-        <div class="container-fluid d-flex">
-          <div class="row justify-content-center w-100">
-            <div class="col-3" style="width:20%">
+  <section class="high-scores-section">
+    {% comment %} <div class="py-2 bg-secondary"></div> {% endcomment %}
+    <div class="bg-success bg-opacity-75 py-3 mb-2
+      border-top border-bottom border-success border-2">
+      <div class="main-container container-fluid pb-4
+        bg-info bg-opacity-25">
+        <h3 class="text-center pt-3">High Scores:</h3>
+        <div class="d-flex justify-content-center">
+          <div class="row justify-content-center">
+            <div class="col-sm-5 text-center text-sm-start mt-1 mt-sm-auto me-4">
               {% angr_leader %}
             </div>
-            <div class="col-3 text-end" style="width:20%">
+            <div class="col-sm-5 text-center text-sm-end mt-3 mt-sm-auto ms-4">
               {% math_leader %}
             </div>
           </div>
@@ -44,5 +60,5 @@
       </div>
     </div>
   </section>
-</main>
+</section>
 {% endblock %}

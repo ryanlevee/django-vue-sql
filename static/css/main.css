@@ -1,5 +1,5 @@
 * {
-  padding: 0%;
+  padding: 0;
   margin: 0;
   text-decoration: none!important;
   /* outline: 1px solid darkgray; */
@@ -92,6 +92,18 @@ form:hover button {
   list-style: none!important;
 }
 
+@media (max-width:1000px) {
+  .nav a {
+    font-size: large!important;
+  }
+}
+
+@media (max-width:832px) {
+  .nav a {
+    font-size: medium!important;
+  }
+}
+
 .dropdown-menu *:hover,
 li:hover a,
 nav form:hover,
@@ -161,24 +173,19 @@ tr a:hover {
   margin: 0 1.3rem 1.5rem 0 !important;
 }
 
-.play-games-button-div {
-  width: 45%;
-  background-color:#ffbd5a;
-}
-
 .play-games-div,
-.play-games-button-div {
+.play-games-button {
   transition: transform .3s;
 }
 
 .play-games-div:hover,
-.play-games-button-div:hover {
+.play-games-button:hover {
   transform: scale(1.02);
 }
 
-.play-games-button-div img {
+.play-games-button img {
   transition: transform .3s;
 }
-.play-games-button-div:hover img {
+.play-games-button:hover img {
   transform: scale(1.07);
 }
