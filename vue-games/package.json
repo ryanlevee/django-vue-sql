@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
