@@ -13,14 +13,14 @@
         text-uppercase text-center my-2">Welcome!</h2>
     </div>
   </div>
-    <a href="{% url 'play:play' %}">
-      <div class="play-games-button-div my-3 mx-auto py-4 text-center rounded">
+  <div class="play-games-button-div my-3 mx-auto py-4 text-center rounded">
+      <a href="{% url 'play:play' %}">
         <div class="mx-auto w-25">
           <img src="{% static 'images/play_games_button_trn2.png' %}"
             alt="play_games_button" class="w-100"/>
         </div>
-      </div>
-    </a>
+      </a>
+    </div>
   <section class="bg-dark bg-opacity-25">
     {% review_carousel %}
   </section>
