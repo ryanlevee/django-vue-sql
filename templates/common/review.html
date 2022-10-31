@@ -4,7 +4,7 @@
     carousel-dark slide w-75 min-vh-200 pt-5" data-bs-ride="carousel">
     <h1 class="display-5 d-block fs-2 fst-italic fw-normal
       pb-0 mb-0 w-100 text-center pt-2">
-      Happy Gamers Say...
+      Fake Reviewers Say...
     </h1>
     <div class="row carousel-inner pt-4 mt-1 pb-5">
       {% for review in reviews %}
@@ -14,7 +14,6 @@
         active text-center" data-bs-interval="5000" {% else %}
         class="carousel-item text-center" data-bs-interval="6000"
         {% endif %}>
-        {% comment %} <h4 class="h4">{{ review.game_title }}</h4> {% endcomment %}
         <p class="review-message">"{{ review.message }}"</p>
         <p class="review-user pt-1 mb-1">- {{ review.user }}</p>
       </div>
