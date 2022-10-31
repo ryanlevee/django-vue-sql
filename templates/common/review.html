@@ -8,16 +8,18 @@
     </h1>
     <div class="row carousel-inner pt-4 mt-1 pb-5">
       {% for review in reviews %}
-      {% cycle 'start' as slidestart silent %}
-      {% cycle 'end' as slideend silent %}
-      <div {% if forloop.first %} class="carousel-item
-        active text-center" data-bs-interval="5000" {% else %}
-        class="carousel-item text-center" data-bs-interval="6000"
-        {% endif %}>
-        <p class="review-message">"{{ review.message }}"</p>
-        <p class="review-user pt-1 mb-1">- {{ review.user }}</p>
-      </div>
-    {% endfor %}
+        {% cycle 'start' as slidestart silent %}
+        {% cycle 'end' as slideend silent %}
+        {% if review.approval == 'Approved' %}
+        <div {% if forloop.first %} class="carousel-item
+          active text-center" data-bs-interval="5000" {% else %}
+          class="carousel-item text-center" data-bs-interval="6000"
+          {% endif %}>
+          <p class="review-message">"{{ review.message }}"</p>
+          <p class="review-user pt-1 mb-1">- {{ review.user }}</p>
+        </div>
+        {% endif %}
+      {% endfor %}
     </div>
     <div>
     <button class="carousel-control-prev pb-4 pe-5 pe-xxl-0" type="button"

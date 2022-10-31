@@ -5,6 +5,20 @@
   /* outline: 1px solid darkgray; */
 }
 
+.navbar li {
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
+
+.navbar li a {
+  padding-top: .75rem!important;
+  padding-bottom: .75rem!important;
+}
+
+a {
+  color: inherit!important;
+}
+
 .card {
   border: 1px solid rgb(189, 189, 189)!important;
 }
@@ -18,9 +32,6 @@
   font-weight: normal;
 }
 
-a {
-  color: inherit!important;
-}
 .card {
   color: black
 }
@@ -68,19 +79,25 @@ form * {
   margin: 5px 5.26px!important;
 }
 
-.home-container {
+#welcome {
   text-shadow: 1px 1px black;
 }
 
-.main-container {
+#high-scores-section {
   font-family: var(--bs-font-monospace);
   text-shadow: none;
 }
 
 .game-title,
 .player {
-  font-family: var(--bs-body-font-family);
+  /* font-family: var(--bs-body-font-family); */
   text-shadow: 1px 1px rgb(51, 51, 236);
+}
+
+.game-title:hover,
+.player:hover {
+  /* font-family: var(--bs-body-font-family); */
+  text-shadow: 1.45px 1.45px rgb(51, 51, 236);
 }
 
 button:hover,

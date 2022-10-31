@@ -41,8 +41,7 @@
               {% if game.game_title_id == 1 %}
               <tr>
                 <td>
-                  <a href="{% url 'games:user' game.user.username %}?
-                    order={{ order }}&direction={{ direction }}">
+                  <a href="{% url 'games:user' game.user.username %}?order={{ order }}&direction={{ direction }}">
                     {{ game.user.username }}</a>
                 </td>
                 <td>
@@ -90,8 +89,7 @@
               {% if game.game_title_id == 2 %}
               <tr>
                 <td style="width:200px">
-                  <a href="{% url 'games:user' game.user.username %}?
-                    order={{ order }}&direction={{ direction }}">
+                  <a href="{% url 'games:user' game.user.username %}?order={{ order }}&direction={{ direction }}">
                     {{ game.user.username }}</a>
                 </td>
                 <td style="width:60px">

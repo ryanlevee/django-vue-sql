@@ -5,35 +5,106 @@
 {% block title %}Home{% endblock %}
 {% block main %}
 <style>
+/*
   .home-page-section > section {
     margin: 0 0 1.1% 0
   }
-  {% comment %}
-  * {
-    outline: 1px solid gray!important;
-  }
-  {% endcomment %}
+*/
 </style>
 <script>
+
   window.onload = function () {
-    OpenBootstrapPopup();
-};
-function OpenBootstrapPopup() {
-    $("#reg-form").modal('show');
-}
+    openBootstrapPopup();
+    modalButtonFocus();
+  };
+
+  function openBootstrapPopup() {
+    if (document.cookie.indexOf("FooBar=true") == -1) {
+      // do nothing
+      document.cookie = "FooBar=true; max-age=86400"; // 86400: seconds in a day
+      $("#welcome-note").modal('show');
+    }
+  }
+  // $(window).on('beforeunload', function () {
+//  $(window).unload(function () { // doesn't work
+      // Remove the cookie
+  //  $.cookie("FooBar", null);
+  // });
+
+  function modalButtonFocus() {
+    const $modal = $("#welcome-note"),
+    $modalClose = $("#close-modal-button");
+    $modal.on("shown.bs.modal", function() {
+        document.activeElement.blur();
+        $modalClose.focus();
+    });
+  }
 
 </script>
-<div class="modal fade" id="reg-form">
+<section class="home-page-section">
+ <section id="welcome ">
+    <div class="bg-success bg-opacity-75 py-3 border-top
+      border-bottom border-success border-2">
+      <div class="d-flex flex-column pb-0
+        bg-info bg-opacity-25 mx-auto">
+        <h2 class="fw-normal fs-2
+          text-center my-2 py-1">Demo Site by Ryan Levee</h2>
+      </div>
+    </div>
+  </section>
+  <section class="play-games-button-section">
+    <div class="container-fluid position-relative">
+      <div id="flag-div" class="position-absolute" style="top:-.5vh;left:2vw;width:4%">
+        <a data-bs-toggle="modal" data-bs-target="#welcome-note" href="#" >
+          <img id="flag" src="{% static 'images/swallowtail_flag_down_cmpr.png' %}" class="w-100" />
+          <img id="alert" src="{% static 'images/alert_filled.png' %}" class="position-absolute" style="right:-15%;top:25%;width:60%;filter: invert(99%) sepia(149%) saturate(2391%) hue-rotate(55deg) brightness(99%) contrast(80%);" />
+        </a>
+      </div>
+    <!-- <div class="row" -->
+      <form action="{% url 'play:play' %}" class="py-3 text-center">
+        <button class="play-games-button col-6 mx-auto py-4 rounded border-0"
+          style="background-color:#ffbd5a;">
+          <img src="{% static 'images/play_games_button_trn2.png' %}"
+            alt="play_games_button_image" class="img-fluid col-10 col-lg-3 col-sm-5" />
+        </button>
+      </form>
+    </div>
+  </section>
+  <section class="review-carousel-section bg-dark bg-opacity-25 mb-3 mt-1">
+    {% review_carousel %}
+  </section>
+  <section id="high-scores-section">
+    <!-- <div class="py-2 bg-secondary"></div> -->
+    <div class="bg-success bg-opacity-75 py-3 mb-2
+      border-top border-bottom border-success border-2">
+      <div class="container-fluid pb-4
+        bg-info bg-opacity-25">
+        <h3 class="text-center pt-3">High Scores:</h3>
+        <div class="d-flex justify-content-center">
+          <div class="row justify-content-center w-75">
+            <div class="col-sm-5 col-xl-4 col-xxl-3 text-sm-start mt-1 mt-sm-auto ms-4 ms-sm-0 me-sm-4 ps-5 ps-sm-0">
+              {% angr_leader %}
+            </div>
+            <div class="col-sm-5 col-xl-4 col-xxl-3 text-sm-end mt-3 mt-sm-auto ms-4 ms-sm-0 ms-sm-4 ps-5 ps-sm-0">
+              {% math_leader %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<div class="modal fade" id="welcome-note">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
+    <div class="modal-content container">
       <div class="modal-header text-center">
-        <!-- <h4 class="h4 modal-title w-100 fw-normal">Sign up</h4> -->
         <h4 class="h4 modal-title w-100 fw-normal"></h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body mx-4 my-5 text-dark">
+      <div class="modal-body mx-4 my-4 text-dark">
         <p>Welcome to my demo website.</p>
-        <p>This site was created using Django Python, and the games are written in Vue.js</p>
+        <p>This site was created using Django Python. The games are written in Vue.js.</p>
+        <p>The goal is to demonstrate a seamless integration of multiple frameworks and languages.</p>
         <p>
           Click the "Play Games" button to choose a Vue.js game.
           If you are logged-in, your scores will be uploaded to an SQL database
@@ -43,55 +114,10 @@ function OpenBootstrapPopup() {
         </p>
         <p>Enjoy,</p>
         <p>Ryan Levee</p>
+        <button id="close-modal-button" type="button" class="row mx-auto py-2 px-4 rounded bg-success bg-opacity-25 border-0 shadow-sm" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-<section class="home-page-section">
- <section class="welcome">
-    <div class="bg-success bg-opacity-75 py-3 border-top
-      border-bottom border-success border-2">
-      <div class="d-flex flex-column py-1 pb-0
-        bg-info bg-opacity-25 mx-auto">
-        <h2 class="home-container fw-normal display-6
-          text-center my-2">Demo Site by Ryan Levee</h2>
-      </div>
-    </div>
-  </section>
-  <section class="play-games-button-section">
-    <div class="container mx-auto">
-      {% comment %} <div class="row" {% endcomment %}
-      <form action="{% url 'play:play' %}" class="row">
-        <button class="play-games-button col-7 mx-auto py-4 rounded border-0"
-          style="background-color:#ffbd5a;">
-          <img src="{% static 'images/play_games_button_trn2.png' %}"
-            alt="play_games_button_image" class="img-fluid col-10 col-lg-3 col-sm-5" />
-        </button>
-      </form>
-    </div>
-  </section>
-  <section class="review-carousel-section bg-dark bg-opacity-25">
-    {% review_carousel %}
-  </section>
-  <section class="high-scores-section">
-    {% comment %} <div class="py-2 bg-secondary"></div> {% endcomment %}
-    <div class="bg-success bg-opacity-75 py-3 mb-2
-      border-top border-bottom border-success border-2">
-      <div class="main-container container-fluid pb-4
-        bg-info bg-opacity-25">
-        <h3 class="text-center pt-3">High Scores:</h3>
-        <div class="d-flex justify-content-center">
-          <div class="row justify-content-center">
-            <div class="col-sm-5 text-center text-sm-start mt-1 mt-sm-auto me-4">
-              {% angr_leader %}
-            </div>
-            <div class="col-sm-5 text-center text-sm-end mt-3 mt-sm-auto ms-4">
-              {% math_leader %}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
+
 {% endblock %}
