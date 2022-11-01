@@ -5,12 +5,10 @@
 {% block title %}Home{% endblock %}
 {% block main %}
 <script>
-
   window.onload = function () {
     openBootstrapPopup();
     modalButtonFocus();
   };
-
   function openBootstrapPopup() {
     if (document.cookie.indexOf("FooBar=true") == -1) {
       // then do nothing
@@ -18,7 +16,6 @@
       $("#welcome-note").modal('show');
     }
   }
-
   function modalButtonFocus() {
     const $modal = $("#welcome-note"),
     $modalClose = $("#close-modal-button");
@@ -27,7 +24,6 @@
         $modalClose.focus();
     });
   }
-
 </script>
 <section class="home-page-section">
  <section id="welcome ">
@@ -120,5 +116,4 @@
     </div>
   </div>
 </div>
-
 {% endblock %}
