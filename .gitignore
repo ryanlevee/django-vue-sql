@@ -15,6 +15,7 @@ catalog
 mkdel*
 # *.dump
 # *pg_dump*
+test.*
 
 # *.pyc
 

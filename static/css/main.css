@@ -135,6 +135,20 @@ li:hover ul li a {
   background-color: #484D53!important;
 }
 
+#close-modal-button {
+  background-color: rgb(25, 135, 84, 0.25);
+  box-shadow: 1px 1px 0.5px rgba(25, 135, 84, 0.35)!important;
+}
+
+#close-modal-button:hover {
+  background-color: rgba(25, 135, 84, 0.5);
+  /* box-shadow: inset 1px 1px rgb(25, 135, 84, 0.75)!important; */
+}
+
+#close-modal-button:active {
+  box-shadow: inset 1.25px 1.25px rgb(25, 135, 84, 0.5)!important;
+}
+
 table tr:hover {
   background-color: skyblue!important;
 }

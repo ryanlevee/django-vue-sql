@@ -4,13 +4,6 @@
 
 {% block title %}Home{% endblock %}
 {% block main %}
-<style>
-/*
-  .home-page-section > section {
-    margin: 0 0 1.1% 0
-  }
-*/
-</style>
 <script>
 
   window.onload = function () {
@@ -20,16 +13,11 @@
 
   function openBootstrapPopup() {
     if (document.cookie.indexOf("FooBar=true") == -1) {
-      // do nothing
+      // then do nothing
       document.cookie = "FooBar=true; max-age=86400"; // 86400: seconds in a day
       $("#welcome-note").modal('show');
     }
   }
-  // $(window).on('beforeunload', function () {
-//  $(window).unload(function () { // doesn't work
-      // Remove the cookie
-  //  $.cookie("FooBar", null);
-  // });
 
   function modalButtonFocus() {
     const $modal = $("#welcome-note"),
@@ -54,10 +42,12 @@
   </section>
   <section class="play-games-button-section">
     <div class="container-fluid position-relative">
-      <div id="flag-div" class="position-absolute" style="top:-.5vh;left:2vw;width:4%">
+      <div id="flag-div" class="position-absolute" style="top:-.5vh;left:4vw;width:4%">
         <a data-bs-toggle="modal" data-bs-target="#welcome-note" href="#" >
           <img id="flag" src="{% static 'images/swallowtail_flag_down_cmpr.png' %}" class="w-100" />
-          <img id="alert" src="{% static 'images/alert_filled.png' %}" class="position-absolute" style="right:-15%;top:25%;width:60%;filter: invert(99%) sepia(149%) saturate(2391%) hue-rotate(55deg) brightness(99%) contrast(80%);" />
+          <img id="alert" src="{% static 'images/alert_filled.png' %}" class="position-absolute"
+            style="right:-15%;top:25%;width:60%;
+            filter:invert(99%)sepia(149%)saturate(2391%)hue-rotate(55deg)brightness(99%)contrast(80%);" />
         </a>
       </div>
     <!-- <div class="row" -->
@@ -111,10 +101,19 @@
           and can be immediately viewed on the "My Game Tracking" page.
           Top scores will be included on the "Leaderboard" page. Among other features,
           you can also leave a review which will show up in the carousel below once it is approved.
+          If you would like "superuser" access to see the SQL back end via Django Admin, let me know.
+          Lastly, the full source code for this website is available in my Github portfolio (link below).
         </p>
         <p>Enjoy,</p>
-        <p>Ryan Levee</p>
-        <button id="close-modal-button" type="button" class="row mx-auto py-2 px-4 rounded bg-success bg-opacity-25 border-0 shadow-sm" data-bs-dismiss="modal">Close</button>
+        <p class="my-0">Ryan Levee</p>
+        <p class="my-0">847-208-9503</p>
+        <p class="mt-0 text-info">
+          <a href="https://linkedin.com/in/ryanlevee" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+          <span class="text-dark"> | </span>
+          <a href="https://github.com/ryanlevee" target="_blank" rel="noreferrer noopener">Github</a>
+        </p>
+        <button id="close-modal-button" type="button" class="row mx-auto py-2 px-4 rounded border-0 "
+        data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

@@ -3,9 +3,11 @@
       border-bottom border-end rounded text-white"
       style="background-color:#326D86;text-shadow:1px 1px black">
       <h1 class="mb-3 text-center">Anagram Hunt</h1>
-      <div v-if="screen === 'config'" id="config-container" class="mb-5 pb-5 mx-3">
+      <div v-if="screen === 'config'" id="config-container" class="mb-5 pb-5
+      mx-3">
         <!-- eslint-disable-next-line -->
-        <SelectInput :currentValue="wordLength" label="Word Length" id="word-length"
+        <SelectInput :currentValue="wordLength" label="Word Length"
+        id="word-length"
           v-model:currentValue="wordLength" :options="numbers" />
         <ol class="mb-4" style="text-shadow:none">
           <li>Choose Word Length</li>
@@ -14,7 +16,8 @@
         </ol>
         <PlayButton @play-button-click="play"/>
       </div>
-      <div v-else-if="screen === 'play'" id="game-container" class="text-center mx-3">
+      <div v-else-if="screen === 'play'" id="game-container" class="text-center
+      mx-3">
         <transition name="slide">
           <template v-if="timeLeft === 0">
             <div>
@@ -22,7 +25,8 @@
               <strong class="big">You Got</strong>
               <div class="huge">{{score}}</div>
               <strong class="big">Anagrams</strong>
-              <button type="button" class="form-control btn btn-primary mt-4 mb-1"
+              <button type="button" class="form-control btn btn-primary mt-4
+              mb-1"
                 @click="restart()">
                   Play again with same settings
               </button>
@@ -36,7 +40,8 @@
         <transition name="slide-right">
           <template v-if="timeLeft > 0">
             <div class="pt-3">
-              <div id="scoreboard" class="row border-bottom py-2 mx-2" style="font-size:1.1rem">
+              <div id="scoreboard" class="row border-bottom py-2 mx-2"
+              style="font-size:1.1rem">
                 <div class="col text-start">
                   <Score :score="score" />
                 </div>
@@ -48,8 +53,9 @@
                 <Word :word="chosenWord" :wordsLeft="wordsLeft" />
               </div>
               <div id="user-input-container" class="m-2">
-                <input id="user-input" ref="inputField" type="text" v-model.trim="userInput" autocomplete="off"
-                  placeholder="type here" @keyup.enter="checkAnswered" class="w-75 p-2" autofocus/>
+                <input id="user-input" ref="inputField" type="text"
+                v-model.trim="userInput" autocomplete="off" placeholder="type
+                here" @keyup.enter="checkAnswered" class="w-75 p-2" autofocus/>
               </div>
               <div id="list">
                 <ol class="py-0 px-4 m-0 mb-3 fs-5">
@@ -64,9 +70,8 @@
 </template>
 <style>
 	main {
-		background-image: url('../../../../../../static/images/lettercloud_wd_cmp.png');
-		/* background-image: url("{% static 'images/lettercloud_wd_cmp.png' %}"); */
-
+		background-image:
+      url('../../../../../../static/images/lettercloud_wd_cmp.png');
 		background-size: 125vh;
 	}
 </style>
@@ -193,7 +198,8 @@
           };
 
           console.log(payload)
-          const response = (await this.axios.post("../record-score/", payload)).data;
+          const response =
+            (await this.axios.post("../record-score/", payload)).data;
           console.log(response);
       },
 
