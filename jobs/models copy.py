@@ -4,7 +4,6 @@ import filetype
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
 
 from play2learn.storage_backends import PrivateMediaStorage
 
@@ -51,7 +50,7 @@ class Applicant(models.Model):
         help_text = 'The earliest date you can start working.',
         validators=[validate_future_date]
     )
-    available_days = models.CharField(max_length=75)
+    available_days = models.CharField(max_length=20)
     desired_hourly_wage = models.DecimalField(max_digits=5,
                                               decimal_places=2)
     cover_letter = models.TextField()
@@ -67,4 +66,4 @@ class Applicant(models.Model):
     )
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name} {self.job}'
+        return f'{self.first_name} {self.last_name} ({self.job})'

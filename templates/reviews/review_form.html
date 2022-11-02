@@ -4,6 +4,11 @@
 
 {% block title %}Review{% endblock %}
 {% block main %}
+<script>
+  window.onload = ()=> {
+    document.querySelector('.select > option').innerHTML = 'Select game title:'
+  }
+</script>
 <div class="card border-primary mx-auto mb-3 p-5 text-black"
   style="max-width:45rem">
   <h4 class="card-header text-center"

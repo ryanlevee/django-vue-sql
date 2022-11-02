@@ -40,11 +40,11 @@ class JobApplicationForm(forms.ModelForm):
             'start_date': forms.DateInput(
                 attrs={'type': 'date'}
             ),
-            'available_days': forms.CheckboxSelectMultiple(attrs={'is_hidden':False}),
+            'available_days': forms.CheckboxSelectMultiple(attrs={'is_hidden':True}, required=True),
             'cover_letter': forms.Textarea(attrs={'cols': '100', 'rows': '5'}
             ),
-            'resume': forms.FileInput(attrs={'accept':'application/pdf'}
-            ),
+            # 'resume': forms.FileInput(attrs={'accept':'application/pdf'}
+            # ),
         }
         error_messages = {
             'start_date': {

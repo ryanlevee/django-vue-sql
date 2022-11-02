@@ -1,4 +1,3 @@
-
 {% block main %}
   <div id="review-slideshow" class="container-fluid carousel
     carousel-dark slide w-75 min-vh-200 pt-5" data-bs-ride="carousel">
@@ -14,7 +13,7 @@
         <div {% if forloop.first %} class="carousel-item
           active text-center" data-bs-interval="5000" {% else %}
           class="carousel-item text-center" data-bs-interval="6000"
-          {% endif %}>
+        {% endif %}>
           <p class="review-message">"{{ review.message }}"</p>
           <p class="review-user pt-1 mb-1">- {{ review.user }}</p>
         </div>
@@ -24,8 +23,8 @@
     <div>
     <button class="carousel-control-prev pb-4 pe-5 pe-xxl-0" type="button"
       data-bs-target="#review-slideshow" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-    <span class="visually-hidden">Previous</span>
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next pb-4 ps-5 ps-xxl-0" type="button"
       data-bs-target="#review-slideshow" data-bs-slide="next">

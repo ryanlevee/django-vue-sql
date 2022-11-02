@@ -5,6 +5,17 @@
   /* outline: 1px solid darkgray; */
 }
 
+#alert {
+  filter: invert(99%)sepia(149%)saturate(2391%)hue-rotate(55deg)brightness(99%)contrast(80%)!important;
+  -webkit-filter: invert(99%)sepia(149%)saturate(2391%)hue-rotate(55deg)brightness(99%)contrast(80%)!important;
+  -moz-filter: invert(99%)sepia(149%)saturate(2391%)hue-rotate(55deg)brightness(99%)contrast(80%)!important;
+  -ms-filter: invert(99%)sepia(149%)saturate(2391%)hue-rotate(55deg)brightness(99%)contrast(80%)!important;
+  -o-filter: invert(99%)sepia(149%)saturate(2391%)hue-rotate(55deg)brightness(99%)contrast(80%)!important;
+  right:-15%!important;
+  top:25%!important;
+  width:60%!important;
+}
+
 .navbar li {
   padding-top: 0!important;
   padding-bottom: 0!important;
@@ -24,7 +35,7 @@ a {
 }
 
 .card,
-.card label {
+.card .form-label {
   background-color: #ccd3da!important;
 }
 
@@ -50,6 +61,13 @@ form * {
 
 .form-label {
   margin-bottom: 4px!important;
+  overflow: auto;
+}
+
+.form-label {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 #div_id_username {
@@ -109,7 +127,7 @@ form:hover button {
   list-style: none!important;
 }
 
-@media (max-width:1000px) {
+@media (max-width:1280px) {
   .navbar-nav a {
     font-size: large!important;
   }
@@ -121,12 +139,12 @@ form:hover button {
   }
 }
 
-.dropdown-menu *:hover,
-li:hover a,
+.nav-item .dropdown-menu *:hover,
+.dropup .dropdown-menu *:hover,
+.dropup li:hover,
+.navbar li:hover,
 nav form:hover,
-tr:hover,
-ul > li:hover,
-li:hover a {
+tr:hover {
   background-color: rgb(42, 45, 70) !important;
 }
 
