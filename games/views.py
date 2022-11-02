@@ -1,6 +1,6 @@
 import html
 
-from django.shortcuts import render
+# from django.shortcuts import render
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
@@ -9,7 +9,8 @@ from django.views.generic import (
     CreateView, DetailView, ListView, TemplateView
 )
 
-from common.utils.email import send_email
+# from common.utils.email import send_email
+from django.core.mail import send_mail
 
 from play2learn import settings
 from .forms import ContactForm
@@ -25,19 +26,28 @@ class ContactUsView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
         data = form.cleaned_data
         to = settings.ADMIN_EMAIL
         subject = "Play2Learn 'Contact Us' Message Received"
-        content = '''<p>Hey Admin!</p>
-            <p>Message details below:</p>
-            <div>'''
+        content = 'Hey Play2Learn Admin!\n\'Contact Us\' details below:\n'
         for key, value in data.items():
-            label = key.replace('_', ' ').title()
-            entry = html.escape(str(value), quote=False)
-            content += f'<p>{label}: {entry}</p>'
+            if key == "email":
+                label = 'From'
+                entry = f'{self.request.user} ({self.request.user.email})'
+                # entry = self.request.user, self.request.user.id
+            else:
+                label = key.replace('_', ' ').title()
+                entry = html.escape(str(value), quote=False)
+            content += f'{label}: {entry}\n'
 
-        content += '</div>'
-
-        send_email(to, subject, content)
+        # send_email(to, subject, content)
+        send_mail(
+            f'{subject}',                   # subject
+            f'{content}',       	        # message
+            f'{settings.ADMIN_EMAIL}',	    # from
+            [f'{settings.ADMIN_EMAIL}'],    # to
+            fail_silently=False,
+        )
         print(data)
         print(to, subject, content)
+        print()
         return super().form_valid(form)
 
 

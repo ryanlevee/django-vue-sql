@@ -4,6 +4,7 @@ from django.views.generic import CreateView, TemplateView
 
 from common.utils.email import send_email
 
+from play2learn.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
 from .models import Applicant
 from .forms import JobApplicationForm
 
@@ -16,7 +17,7 @@ class JobAppView(CreateView):
 
     def form_valid(self, form):
             data = form.cleaned_data
-            to = 'you@example.com'
+            to = ADMIN_EMAIL
             subject = 'Application for Game Designer'
             # remove f from below (f''') per pylint
             content = '''<p>Hey HR Manager!</p>

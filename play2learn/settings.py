@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-
+from play2learn.local_settings import EMAIL_HOST_PASSWORD
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING:
 DEBUG = False
 # SECRET_KEY = 'django-insecure-!t@qq@o2vxyfc-q_byajaj!k&qj#za2v@zu-450-7#@(c)ef)-'
-SECRET_KEY = 'nm6fz7i8i=qz6)x^yx%-=&406si38_x*&9fmtna!bm%&@9j#(1'
+SECRET_KEY = os.environ.get('SENDGRID_API_KEY')
 
 VUE_DIST = BASE_DIR / "vue-games" / "dist"  # vue-cli path - Django3 style
 
@@ -99,14 +99,21 @@ DATABASES = {
              }
 
 # EMAIL
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
+# EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_USE_SSL = False
+EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_USER = 'ryanlevee@gmail.com'
+# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = 'ryanlevee@gmail.com'
 ADMIN_EMAIL = 'ryanlevee@gmail.com'
+
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
@@ -180,9 +187,6 @@ STATICFILES_DIRS = [
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/' # Does not tell to look in 'static' folder
-
-# CONTACT FORM TEST
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 if os.environ.get('ENVIRONMENT') != 'production':
     from .local_settings import *
