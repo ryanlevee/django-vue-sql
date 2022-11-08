@@ -8,6 +8,7 @@ from play2learn.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
 from .models import Applicant
 from .forms import JobApplicationForm
 
+####### ALSO ADD EMAIL FOR WHEN GAME SCORE IS LOGGED
 
 class JobAppView(CreateView):
     model = Applicant
