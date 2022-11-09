@@ -16,7 +16,7 @@ mkdel*
 # *.dump
 # *pg_dump*
 test.*
-
+zzz_private
 # *.pyc
 
 play2learn/local_settings.py

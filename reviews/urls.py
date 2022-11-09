@@ -8,5 +8,5 @@ urlpatterns = [
     path("", ReviewListView.as_view(), name="list"),
     path("review/", ReviewCreateView.as_view(), name="review"),
     path('review/thanks/', ReviewThanksView.as_view(), name='thanks'),
-
+    path('review/sorry/', ReviewThanksView.as_view(), name='sorry'),
 ]

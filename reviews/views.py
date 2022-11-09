@@ -20,7 +20,7 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
 
 
     def form_valid(self, form):
-        # try: ####################### NOT WORKING ##########################
+        try: ####################### NOT WORKING ##########################
             data = form.cleaned_data
             to = ADMIN_EMAIL
             subject = 'Play2Learn Game Review Received'
@@ -41,8 +41,8 @@ class ReviewCreateView(LoginRequiredMixin, CreateView):
             )
             form.instance.user = self.request.user
             return super().form_valid(form)
-        # except IntegrityError:   ######################## THIS ISN'T WORKING ##
-        #     return render(request=None, template_name="reviews/thanks.html")
+        except IntegrityError:   ######################## THIS ISN'T WORKING ##
+            return render(request=None, template_name="reviews/sorry.html")
 
 class ReviewThanksView(TemplateView):
     template_name = 'reviews/thanks.html'
