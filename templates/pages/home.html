@@ -15,7 +15,7 @@
       document.cookie = "FooBar=true; max-age=18000"; // 86400: seconds in a day
       $("#welcome-note").modal('show');
     }
-  }
+  };
   function modalButtonFocus() {
     const $modal = $("#welcome-note"),
     $modalClose = $("#close-modal-button");
@@ -84,9 +84,12 @@
       </div>
       <div class="modal-body mx-4 my-4 text-dark">
         <p>Welcome to my demo website.</p>
-        <p>This site was created using Django Python. The games are written in Vue.js.<br>My goal here is to demonstrate a scalable, seamless integration between multiple frameworks and languages.</p>
+        <p>This site was created using Django Python. The games are written in Vue.js.</p>
         <p>
-          Users can create an account, play games, track their scores, check leaderboards, submit reviews, apply for (fake) jobs for a (fake) company, and more.
+          Users can create accounts, play games, track their scores, check leaderboards, submit reviews, apply for faux-jobs for a faux-company called "Play2Learn", and more.
+        </p>
+        <p>
+          My goal here is to demonstrate a scalable, seamless integration between multiple frameworks and languages.
         </p>
         <p>
           Click the "Play Games" button to choose a Vue.js game.
