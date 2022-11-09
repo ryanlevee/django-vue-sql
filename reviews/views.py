@@ -1,20 +1,48 @@
+import html
+
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, ListView, TemplateView
 
+from django.core.mail import send_mail
+
+from play2learn.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
 from .forms import ReviewForm
 from .models import Review
 
+from django.db import IntegrityError
+from django.shortcuts import render
 
 class ReviewCreateView(LoginRequiredMixin, CreateView):
     model = Review
     form_class = ReviewForm
     success_url = reverse_lazy('reviews:thanks')
 
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
 
+    def form_valid(self, form):
+        # try: ####################### NOT WORKING ##########################
+            data = form.cleaned_data
+            to = ADMIN_EMAIL
+            subject = 'Play2Learn Game Review Received'
+            # remove f from below (f''') per pylint
+            content = 'Hey Play2Learn Admin!\n\'Review\' details below:\n'
+            for key, value in data.items():
+                label = key.replace('_', ' ').title()
+                entry = html.escape(str(value), quote=False)
+                content += f'{label}: {entry}\n'
+
+
+            send_mail(
+                f'{subject}',           # subject
+                f'{content}',       	# message
+                f'{ADMIN_EMAIL}',	    # from
+                [f'{ADMIN_EMAIL}'],     # to
+                fail_silently=False,
+            )
+            form.instance.user = self.request.user
+            return super().form_valid(form)
+        # except IntegrityError:   ######################## THIS ISN'T WORKING ##
+        #     return render(request=None, template_name="reviews/thanks.html")
 
 class ReviewThanksView(TemplateView):
     template_name = 'reviews/thanks.html'

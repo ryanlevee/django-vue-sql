@@ -11,6 +11,14 @@
     style="margin-bottom:1rem;padding-bottom:1rem">Contact Us</h4>
   <form method="POST" class="post-form">
     {% csrf_token %}
+    <div class="form-row d-flex">
+      <div class="form-group col-md-6 pe-4">
+        {{ form.first_name|as_crispy_field }}
+      </div>
+      <div class="form-group col-md-6">
+        {{ form.last_name|as_crispy_field }}
+      </div>
+    </div>
     {{ form.email|as_crispy_field }}
     {{ form.subject|as_crispy_field }}
     {{ form.message|as_crispy_field }}

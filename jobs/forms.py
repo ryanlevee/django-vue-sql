@@ -5,23 +5,23 @@ from django.core.exceptions import ValidationError
 from .models import Applicant
 
 
-def validate_checked(value):
-    if not value:
-        raise ValidationError("Required.")
+# def validate_checked(value):
+#     if not value:
+#         raise ValidationError("Required.")
 
 
 class JobApplicationForm(forms.ModelForm):
 
     confirmation = forms.BooleanField(
         label = 'I certify that the information I have provided is true.',
-        validators=[validate_checked]
+        # validators=[validate_checked]
     )
 
-    resume = forms.FileField(
+    # resume = forms.FileField(
         # attrs={'accept':'application/pdf'},
         # validators=[validate_checked]
         # widgets=forms.FileInput()
-    )
+    # )
 
     class Meta:
         model = Applicant

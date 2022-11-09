@@ -12,7 +12,7 @@
   function openBootstrapPopup() {
     if (document.cookie.indexOf("FooBar=true") == -1) {
       // then do nothing
-      document.cookie = "FooBar=true; max-age=86400"; // 86400: seconds in a day
+      document.cookie = "FooBar=true; max-age=18000"; // 86400: seconds in a day
       $("#welcome-note").modal('show');
     }
   }
@@ -63,10 +63,10 @@
         <h3 class="text-center pt-3">High Scores:</h3>
         <div class="d-flex justify-content-center">
           <div class="row justify-content-center w-75">
-            <div class="col-sm-5 col-xl-4 col-xxl-3 text-sm-start mt-1 mt-sm-auto ms-4 ms-sm-0 me-sm-4 ps-5 ps-sm-0">
+            <div class="col-sm-5 col-xl-4 col-xxl-3 text-sm-start mt-1 mt-sm-auto me-sm-4 ps-5 ps-sm-0">
               {% angr_leader %}
             </div>
-            <div class="col-sm-5 col-xl-4 col-xxl-3 text-sm-end mt-3 mt-sm-auto ms-4 ms-sm-0 ms-sm-4 ps-5 ps-sm-0">
+            <div class="col-sm-5 col-xl-4 col-xxl-3 text-sm-end mt-3 mt-sm-auto ms-sm-4 ps-5 ps-sm-0">
               {% math_leader %}
             </div>
           </div>
@@ -83,17 +83,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body mx-4 my-4 text-dark">
-        <p>Welcome to my demo website.</p>
+        <p>Welcome to my demo website where users can create an account, play games, track their scores, check leaderboards, submit reviews, apply for (fake) jobs for a (fake) company, and more.</p>
         <p>This site was created using Django Python. The games are written in Vue.js.</p>
-        <p>The goal is to demonstrate a scalable, seamless integration of multiple frameworks and languages.</p>
+        <p>My goal here is to demonstrate a scalable, seamless integration of multiple frameworks and languages.</p>
         <p>
           Click the "Play Games" button to choose a Vue.js game.
           If you are logged-in, your scores will be uploaded to an SQL database
           and can be immediately viewed on the "My Game Tracking" page.
           Top scores will be included on the "Leaderboard" page. Among other features,
           you can also leave a review which will show up in the carousel below once it is approved.
-          If you would like "superuser" access to see the SQL back end via Django Admin, let me know.
-          Lastly, the full source code for this website is available in my Github portfolio (link below).
+          If you would like superuser access to see the SQL back end via Django Admin, let me know.
+          The full source code for the entire website is also available in my Github portfolio (link below).
         </p>
         <p>Thank you,</p>
         <p class="my-0">Ryan Levee</p>

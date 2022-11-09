@@ -63,7 +63,7 @@ class Applicant(models.Model):
     resume = models.FileField(
         storage = PrivateMediaStorage(),
         upload_to='resumes', blank=True, help_text='PDFs only',
-        validators=[validate_pdf]
+        # validators=[validate_pdf]
     )
 
     def __str__(self):

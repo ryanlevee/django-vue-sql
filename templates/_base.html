@@ -163,7 +163,14 @@
     </div>
   </nav>
 </header>
-<p class="text-center mb-0 fs-6 opacity-75 fw-light">demo website created by Ryan Levee</p>
+
+<p {% if 'anagram-play' in request.path or 'math-game' in request.path %}
+  class="text-center position-absolute mt-5 pt-2 w-100 fs-6 text-black"
+  style="z-index:1;" {% elif 'job-app' in request.path %}
+  class="text-end position-absolute mt-5 pt-2 pe-3 w-100 fs-6 opacity-75 fw-light"
+  {% else %}
+  class="text-center position-absolute mt-5 pt-2 w-100 fs-6 opacity-75 fw-light"
+  {% endif %}>demo website created by Ryan Levee</p>
 {% endblock header %}
 <main class="my-auto">
 

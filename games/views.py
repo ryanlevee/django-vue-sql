@@ -12,37 +12,35 @@ from django.views.generic import (
 # from common.utils.email import send_email
 from django.core.mail import send_mail
 
-from play2learn import settings
+from play2learn.settings import DEFAULT_FROM_EMAIL, ADMIN_EMAIL
 from .forms import ContactForm
 from .models import Game, ContactUs
 
 
-class ContactUsView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
+class ContactUsView(SuccessMessageMixin, CreateView):
     model = ContactUs
     form_class = ContactForm
     success_url = reverse_lazy('games:thanks')
 
     def form_valid(self, form):
         data = form.cleaned_data
-        to = settings.ADMIN_EMAIL
+        to = ADMIN_EMAIL
         subject = "Play2Learn 'Contact Us' Message Received"
         content = 'Hey Play2Learn Admin!\n\'Contact Us\' details below:\n'
         for key, value in data.items():
-            if key == "email":
-                label = 'From'
-                entry = f'{self.request.user} ({self.request.user.email})'
-                # entry = self.request.user, self.request.user.id
-            else:
-                label = key.replace('_', ' ').title()
-                entry = html.escape(str(value), quote=False)
+            label = key.replace('_', ' ').title()
+            entry = html.escape(str(value), quote=False)
+            if self.request.user.is_authenticated:
+                if key == "email":
+                    label = 'From'
+                    entry = f'{self.request.user} ({self.request.user.email})'
             content += f'{label}: {entry}\n'
 
-        # send_email(to, subject, content)
         send_mail(
-            f'{subject}',                   # subject
-            f'{content}',       	        # message
-            f'{settings.ADMIN_EMAIL}',	    # from
-            [f'{settings.ADMIN_EMAIL}'],    # to
+            f'{subject}',           # subject
+            f'{content}',       	# message
+            f'{ADMIN_EMAIL}',	    # from
+            [f'{ADMIN_EMAIL}'],     # to
             fail_silently=False,
         )
         print(data)

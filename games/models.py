@@ -7,6 +7,8 @@ mow = now.strftime("%Y-%m-%d %H:%M:%S")
 
 
 class ContactUs(models.Model):
+    first_name = models.CharField(max_length=50, blank=True)
+    last_name = models.CharField(max_length=50, blank=True)
     email = models.EmailField()
     subject = models.TextField()
     message = models.TextField()
@@ -16,7 +18,7 @@ class ContactUs(models.Model):
         verbose_name_plural = 'Contact Us'
 
     def __str__(self):
-        return f'{self.email, self.subject, self.message, self.timestamp}'
+        return f'{self.email, self.first_name, self.last_name, self.subject, self.message, self.timestamp}'
 
 
 class Title(models.Model):

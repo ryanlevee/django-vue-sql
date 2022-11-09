@@ -6,12 +6,14 @@
 {% block main %}
 
 <link rel="stylesheet" href="{% static 'css/bootstrap-multiselect(by_davidstutz).css' %}">
-<script src="{% static 'js/bootstrap-multiselect(by_davidstutz).js' %}" crossorigin="anonymous"></script>
-<script src="{% static 'js/bootstrap.min(dropdowns).js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'js/bootstrap-multiselect(by_davidstutz).js' %}" ></script>
+<script src="{% static 'js/bootstrap.min(dropdowns).js' %}" ></script>
 
-<div class="card border-primary m-auto my-3 px-3 pt-3 pb-5" style="max-width: 50rem">
-    <h2 class="text-center">Play2Learn Job Application</h2>
-  <form method="post" novalidate enctype="multipart/form-data" class="container" name="job-form">
+<div class="card border-primary m-auto my-3 px-3 pt-3 pb-5"
+  style="max-width: 50rem">
+  <h3 class="text-center">Play2Learn Job Application</h2>
+  {% comment %} <form method="POST" enctype="multipart/form-data" class="container post-form" name="job-form"> {% endcomment %}
+  <form method="POST" enctype="multipart/form-data" class="container post-form" >
       {% csrf_token %}
       <div class="form-row d-flex">
         <div class="form-group col px-3">
@@ -84,9 +86,12 @@
       </div>
       <div class="form-row d-flex">
         <div class="form-group col px-3">
+          {% comment %}
           <button class="form-control btn btn-success">
             Apply
           </button>
+          {% endcomment %}
+          <button class="btn btn-success w-100">Submit</button>
         </div>
       </div>
   </form>
