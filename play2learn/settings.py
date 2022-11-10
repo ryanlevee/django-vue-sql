@@ -187,6 +187,6 @@ STATICFILES_DIRS = [
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/' # Does not tell to look in 'static' folder
 
-# if os.environ.get('ENVIRONMENT') != 'production':
-#     from .local_settings import *
+if os.environ.get('ENVIRONMENT') != 'production':
+    from .local_settings import *
 # DON'T PUT ANYTHING BELOW THIS
