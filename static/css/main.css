@@ -174,7 +174,7 @@ table tr:hover {
 tr a:hover {
   color: hsl(198, 63%, 38%)!important;
 }
-
+/*
 .message {
   background-color: palegoldenrod;
   color: black;
@@ -203,6 +203,7 @@ tr a:hover {
   background-color: pink;
   color: darkred;
 }
+*/
 
 #review-slideshow p {
   font-size: 1.2rem!important;

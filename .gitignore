@@ -18,6 +18,7 @@ mkdel*
 test.*
 zzz_private
 # *.pyc
+*test*
 
 play2learn/local_settings.py
 
