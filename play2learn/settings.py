@@ -158,23 +158,27 @@ TIME_ZONE = 'America/Los_Angeles'
 USE_I18N = True
 USE_TZ = True
 
-# # Static files
-# AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-# AWS_STORAGE_BUCKET_NAME = 'django-vue-sql-aws' # REPLACE WITH BUCKET NAME
-# # AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-# # AWS_S3_CUSTOM_DOMAIN = f's3://{AWS_STORAGE_BUCKET_NAME}'
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.us-west-1.amazonaws.com'
-# AWS_S3_SIGNATURE_VERSION = 's3v4'
-# AWS_DEFAULT_ACL = None # Use S3 bucket's setting
+# Static files
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'django-vue-sql-aws' # REPLACE WITH BUCKET NAME
+# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# AWS_S3_CUSTOM_DOMAIN = f's3://{AWS_STORAGE_BUCKET_NAME}'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.us-west-1.amazonaws.com'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
+AWS_DEFAULT_ACL = None # Use S3 bucket's setting
 
-# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-# MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
 
 STATICFILES_STORAGE = 'play2learn.storage_backends.StaticStorage'
 # COLLECTFAST_STRATEGY = 'collectfast.strategies.storage_backends.StaticStorageStrategy'
 DEFAULT_FILE_STORAGE = 'play2learn.storage_backends.PublicMediaStorage'
 PRIVATE_FILE_STORAGE = 'play2learn.storage_backends.PrivateMediaStorage'
+
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
@@ -182,10 +186,6 @@ STATICFILES_DIRS = [
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/' # Does not tell to look in 'static' folder
-
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
 
 if os.environ.get('ENVIRONMENT') != 'production':
     from .local_settings import *
