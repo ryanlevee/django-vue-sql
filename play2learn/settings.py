@@ -173,7 +173,6 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 STATICFILES_STORAGE = 'play2learn.storage_backends.StaticStorage'
-# COLLECTFAST_STRATEGY = 'collectfast.strategies.storage_backends.StaticStorageStrategy'
 DEFAULT_FILE_STORAGE = 'play2learn.storage_backends.PublicMediaStorage'
 PRIVATE_FILE_STORAGE = 'play2learn.storage_backends.PrivateMediaStorage'
 
