@@ -1,7 +1,6 @@
 import html
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
-import requests
 
 # from common.utils.email import send_email
 from django.core.mail import send_mail
@@ -41,10 +40,8 @@ class JobAppView(CreateView):
         print(to, subject, content)
         print()
 
-        try:
-            return super().form_valid(form)
-        except requests.exceptions.HTTPError:
-            return self.success_url
+        return super().form_valid(form)
+
 
 class JobAppThanksView(TemplateView):
     template_name = 'jobs/thanks.html'
