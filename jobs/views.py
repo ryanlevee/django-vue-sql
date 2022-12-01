@@ -25,6 +25,10 @@ class JobAppView(CreateView):
             for key, value in data.items():
                 label = key.replace('_', ' ').title()
                 entry = html.escape(str(value), quote=False)
+                if self.request.user.is_authenticated:
+                    if key == "email":
+                        label = 'From'
+                        entry = f'{self.request.user} ({self.request.user.email})'
                 if label == 'Available Days':
                     entry = entry.replace('\'','').strip('][').split(', ')
                 content += f'{label}: {entry}\n'
