@@ -17,7 +17,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING:
 DEBUG = False
-# SECRET_KEY = 'django-insecure-!t@qq@o2vxyfc-q_byajaj!k&qj#za2v@zu-450-7#@(c)ef)-'
 SECRET_KEY = os.environ.get('SENDGRID_API_KEY')
 
 VUE_DIST = BASE_DIR / "vue-games" / "dist"  # vue-cli path - Django3 style
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'allauth',
     'allauth.account',
+    'tracking',
 
     # Local (my) apps
     'common.apps.CommonConfig',
@@ -60,6 +60,8 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
@@ -70,7 +72,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tracking.middleware.VisitorTrackingMiddleware',
     ]
+
+# django-tracking2
+TRACK_SUPERUSERS = True
+TRACK_REFERER = True
 
 ROOT_URLCONF = 'play2learn.urls'
 

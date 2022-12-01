@@ -36,10 +36,10 @@ class Game(models.Model):
     Math_Facts = "Math Facts"
     Anagram_Hunt = "Anagram Hunt"
 
-    GAME_CHOICES = [
-        (Math_Facts, "Math Facts"),
-        (Anagram_Hunt, "Anagram Hunt"),
-    ]
+    # GAME_CHOICES = [
+    #     (Math_Facts, "Math Facts"),
+    #     (Anagram_Hunt, "Anagram Hunt"),
+    # ]
 
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
@@ -52,16 +52,16 @@ class Game(models.Model):
         related_name='games'
     )
 
-    title = models.TextField(choices=GAME_CHOICES, default=Math_Facts)
+    # title = models.TextField(choices=GAME_CHOICES, default=Math_Facts)
     score = models.SmallIntegerField()
     operation = models.CharField(max_length=3, blank=True)
     max_number = models.SmallIntegerField(blank=True)
     word_length = models.SmallIntegerField(blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 
-    # def __str__(self):
-        # return f'''{self.title, self.score, self.operation,
-                    # self.max_number, self.word_length, self.timestamp}'''
+    def __str__(self):
+        return f'''{self.score, self.operation,
+                    self.max_number, self.word_length, self.timestamp}'''
 
     class Meta:
         verbose_name_plural = 'Leaderboard'

@@ -67,23 +67,21 @@ class GamePlayView(TemplateView):
 
 class GameListView(ListView):
     model = Game
-    paginate_by = 40
+    template_name = 'games/game_list.html'
+    context_object_name = 'games'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
         order_fields, order_key, direction = self.get_order_settings()
 
         context['order'] = order_key
         context['direction'] = direction
-
         context['order_fields'] = list(order_fields.keys())[:-1]
 
         return context
 
     def get_ordering(self):
         order_fields, order_key, direction = self.get_order_settings()
-
         ordering = order_fields[order_key]
 
         if direction != 'asc':
@@ -105,11 +103,11 @@ class GameListView(ListView):
     def get_order_fields(self):
         return {
             # 'game': 'title',
-            'game_title': 'game_title',
-            'user': 'user__username',
+            # 'game_title': 'game_title',
+            # 'user': 'user__username',
             'score': 'score',
-            'operation': 'operation',
-            'max_number': 'max_number',
+            # 'operation': 'operation',
+            # 'max_number': 'max_number',
             'default_key': 'score',
         }
 
@@ -121,4 +119,10 @@ class GameListView(ListView):
             username = self.kwargs['username']
             qs = qs.filter(user__username=username)
 
-        return qs.prefetch_related('user').order_by(ordering)
+        queryset = {
+            'user': qs.prefetch_related('user').order_by(ordering),
+            'angr_list': qs.filter(game_title_id=2).order_by(ordering)[:16],
+            'math_list': qs.filter(game_title_id=1).order_by(ordering)[:16]
+            }
+
+        return queryset

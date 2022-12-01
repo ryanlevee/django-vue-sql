@@ -5,9 +5,9 @@
 
 {% block main %}
 <section class="position-relative bg-info bg-opacity-10
-  border-bottom border-2">
-  <h2 class="text-center bg-info bg-opacity-25 pb-2 my-2
-    mx-auto p-0 w-100 border-top border-2 border-bottom border-1
+  border-bottom border-2 mt-4">
+  <h2 class="text-center bg-info bg-opacity-25 py-2 my-2
+    mx-auto w-100 border-top border-2 border-bottom border-1
     {% if 'games/user' in request.get_full_path %}
     mb-4">Player Game Tracking</h2>
     {% else %}
@@ -37,8 +37,9 @@
             {% endwith %}
           </thead>
           <tbody>
-            {% for game in game_list|slice:":32" %}
-              {% if game.game_title_id == 1 %}
+            {% comment %} {% for game in game_list|slice:":20" %} {% endcomment %}
+            {% for game in games.math_list %}
+              {% comment %} {% if game.game_title_id == 1 %} {% endcomment %}
               <tr>
                 <td>
                   <a href="{% url 'games:user' game.user.username %}?order={{ order }}&direction={{ direction }}">
@@ -61,7 +62,7 @@
                     {{ game.max_number }}</a>
                 </td>
               </tr>
-              {% endif %}
+              {% comment %} {% endif %} {% endcomment %}
             {% endfor %}
           <tbody>
         </table>
@@ -85,8 +86,9 @@
             {% endwith %}
           </thead>
           <tbody>
-            {% for game in game_list|slice:":34" %}
-              {% if game.game_title_id == 2 %}
+            {% comment %} {% for game in game_list|slice:":20" %} {% endcomment %}
+            {% for game in games.angr_list %}
+              {% comment %} {% if game.game_title_id == 2 %} {% endcomment %}
               <tr>
                 <td style="width:200px">
                   <a href="{% url 'games:user' game.user.username %}?order={{ order }}&direction={{ direction }}">
@@ -105,8 +107,8 @@
                     {{ game.word_length }}</a>
                 </td>
               </tr>
-              {% endif %}
-            {% endfor %}
+              {% endfor %}
+              {% comment %} {% endif %} {% endcomment %}
           <tbody>
         </table>
       </div>
