@@ -16,6 +16,7 @@ django-environ==0.9.0
 django-private-storage==3.0
 django-sendgrid-v5
 django-storages==1.12.3
+django-tracking2
 docutils==0.18.1
 filetype==1.0.13
 gunicorn==20.1.0
