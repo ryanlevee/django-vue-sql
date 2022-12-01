@@ -33,4 +33,3 @@ def review_carousel():
     reviews = Review.objects.all()
 
     return {'reviews': reviews}
-
