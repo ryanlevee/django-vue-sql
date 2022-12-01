@@ -131,123 +131,115 @@
                     Sign Up
                   </a>
                 </li>
+                {% else %}
+                <li>
+                  <a class="dropdown-item text-uppercase fs-5 text-light"
+                    href="{% url 'my-account' %}" style="padding:1rem">
+                    My Profile
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-uppercase fs-5 text-light"
+                    href="{% url 'games:user' user.username %}?order={{ order }}&direction={{ direction }}"
+                    style="padding:1rem">
+                    My Scores
+                  </a>
+                </li>
+                <div class="dropdown-divider"></div>
+                  <form method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    <button class="dropdown-item text-uppercase
+                      fs-6 text-light">
+                      Log out
+                    </button>
+                  </form>
+                </div>
               </ul>
-              {% else %}
-            </li>
-            <li>
-              <a class="dropdown-item text-uppercase fs-5 text-light"
-                href="{% url 'my-account' %}" style="padding:1rem">
-                My Profile
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item text-uppercase fs-5 text-light"
-                href="{% url 'games:user' user.username %}?order={{ order }}&direction={{ direction }}"
-                style="padding:1rem">
-                My Scores
-              </a>
-            </li>
-            <div class="dropdown-divider"></div>
-              <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                <button class="dropdown-item text-uppercase
-                  fs-6 text-light">
-                  Log out
-                </button>
-              </form>
-            </div>
             {% endif %}
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
+<p {% if 'anagram-play' in request.path or 'math-game' in request.path %}
+class="text-center position-absolute w-100 fs-6 text-black"
+style="z-index:1;" {% elif 'job-app' in request.path %}
+class="text-end position-absolute pe-3 w-100 fs-6 opacity-75 fw-light"
+{% else %}
+class="text-center position-absolute w-100 fs-6 opacity-75 fw-light"
+{% endif %}>demo website created by Ryan Levee</p>
+{% endblock header %}
 </header>
 
-<p {% if 'anagram-play' in request.path or 'math-game' in request.path %}
-  class="text-center position-absolute mt-5 pt-2 w-100 fs-6 text-black"
-  style="z-index:1;" {% elif 'job-app' in request.path %}
-  class="text-end position-absolute mt-5 pt-2 pe-3 w-100 fs-6 opacity-75 fw-light"
-  {% else %}
-  class="text-center position-absolute mt-5 pt-2 w-100 fs-6 opacity-75 fw-light"
-  {% endif %}>demo website created by Ryan Levee</p>
-{% endblock header %}
 <main class="my-auto">
-
 {% block main %}{% endblock %}
 </main>
+
 {% block footer %}
 <footer>
   <div class="container-fluid bg-dark bg-opacity-25 py-1">
     <div class="row">
       <div class="d-sm-flex justify-content-between">
-        <!-- <div class="row"> -->
-          <div class="col d-flex justify-content-start">
-            <a class="text-light px-3 my-auto text-uppercase
-              text-decoration-none" href="{% url 'games:contact' %}">
-              Contact Us
+        <div class="col d-flex justify-content-start">
+          <a class="text-light px-3 my-auto text-uppercase
+            text-decoration-none" href="{% url 'games:contact' %}">
+            Contact Us
+          </a>
+          <a class="text-light px-3 my-auto text-uppercase
+            text-decoration-none" href="{% url 'games:about' %}">
+            About
+          </a>
+          {% if user.is_staff %}
+          <div class="btn-group dropup">
+            <a class="dropdown-toggle text-uppercase text-light
+              my-auto ms-3" href="#" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Admin
             </a>
-            <a class="text-light px-3 my-auto text-uppercase
-              text-decoration-none" href="{% url 'games:about' %}">
-              About
-            </a>
-            {% if user.is_staff %}
-            <div class="btn-group dropup">
-              <a class="dropdown-toggle text-uppercase text-light
-                my-auto ms-3" href="#" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Admin
-              </a>
-              <ul class="dropdown-menu bg-dark bg-opacity-50">
-                <div class="p-2">
-                  <a class="text-light px-3 my-auto text-uppercase
-                    text-decoration-none" href="/reviews/">
-                    Reviews List
-                  </a>
-                </div>
-                <div class="p-2">
-                  <a class="text-light px-3 my-auto text-uppercase
-                    text-decoration-none" href="/admin/">
-                    Admin
-                  </a>
-                </div>
-              </ul>
-            </div>
-            {% endif %}
-          </div>
-        <!-- </div> -->
-        <!-- <div class="row"> -->
-          <div class="col">
-            <!-- <div class="row"> -->
-              <small class="d-block mb-1 text-end">
-                &copy; 2022 Play2Learn. All rights are not reserved.
-              </small>
-            <!-- </div> -->
-            <!-- <div class="row"> -->
-              <div class="d-flex justify-content-end pb-1">
-                <a href="{% url 'games:contact' %}"
-                  class="text-decoration-none text-muted px-2">
-                  <i class="fa-solid fa-envelope fa-2x text-info"></i>
-                </a>
-                <a href="https://instagram.com"
-                  class="text-decoration-none text-muted px-2">
-                  <i class="fa-brands fa-instagram-square
-                    fa-2x text-info"></i>
-                </a>
-                <a href="https://twitter.com"
-                  class="text-decoration-none text-muted px-2">
-                  <i class="fa-brands fa-twitter-square
-                    fa-2x text-info"></i>
-                </a>
-                <a href="https://facebook.com"
-                  class="text-decoration-none text-muted ps-2">
-                  <i class="fa-brands fa-facebook fa-2x text-info"></i>
+            <ul class="dropdown-menu bg-dark bg-opacity-50">
+              <div class="p-2">
+                <a class="text-light px-3 my-auto text-uppercase
+                  text-decoration-none" href="/reviews/">
+                  Reviews List
                 </a>
               </div>
-            <!-- </div> -->
+              <div class="p-2">
+                <a class="text-light px-3 my-auto text-uppercase
+                  text-decoration-none" href="/admin/">
+                  Admin
+                </a>
+              </div>
+            </ul>
           </div>
-        <!-- </div> -->
-      <!-- </div> -->
+          {% endif %}
+        </div>
+        <div class="col">
+          <small class="d-block mb-1 text-end">
+            &copy; 2022 Play2Learn. All rights are not reserved.
+          </small>
+          <div class="d-flex justify-content-end pb-1">
+            <a href="{% url 'games:contact' %}"
+              class="text-decoration-none text-muted px-2">
+              <i class="fa-solid fa-envelope fa-2x text-info"></i>
+            </a>
+            <a href="https://instagram.com"
+              class="text-decoration-none text-muted px-2">
+              <i class="fa-brands fa-instagram-square
+                fa-2x text-info"></i>
+            </a>
+            <a href="https://twitter.com"
+              class="text-decoration-none text-muted px-2">
+              <i class="fa-brands fa-twitter-square
+                fa-2x text-info"></i>
+            </a>
+            <a href="https://facebook.com"
+              class="text-decoration-none text-muted ps-2">
+              <i class="fa-brands fa-facebook fa-2x text-info"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

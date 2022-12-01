@@ -37,32 +37,29 @@
             {% endwith %}
           </thead>
           <tbody>
-            {% comment %} {% for game in game_list|slice:":20" %} {% endcomment %}
             {% for game in games.math_list %}
-              {% comment %} {% if game.game_title_id == 1 %} {% endcomment %}
-              <tr>
-                <td>
-                  <a href="{% url 'games:user' game.user.username %}?order={{ order }}&direction={{ direction }}">
-                    {{ game.user.username }}</a>
-                </td>
-                <td>
-                  <a class="text-decoration-none text-dark">
-                    {{ game.score }}</a>
-                </td>
-                <td>
-                  <a class="text-decoration-none text-dark">
-                    {{ game.timestamp }}</a>
-                </td>
-                <td class="text-center" style="width:100px">
-                  <a class="text-decoration-none text-dark">
-                    {{ game.operation }}</a>
-                </td>
-                <td class="text-center" style="width:92px">
-                  <a class="text-decoration-none text-dark">
-                    {{ game.max_number }}</a>
-                </td>
-              </tr>
-              {% comment %} {% endif %} {% endcomment %}
+            <tr>
+              <td>
+                <a href="{% url 'games:user' game.user.username %}?order={{ order }}&direction={{ direction }}">
+                  {{ game.user.username }}</a>
+              </td>
+              <td>
+                <a class="text-decoration-none text-dark">
+                  {{ game.score }}</a>
+              </td>
+              <td>
+                <a class="text-decoration-none text-dark">
+                  {{ game.timestamp }}</a>
+              </td>
+              <td class="text-center" style="width:100px">
+                <a class="text-decoration-none text-dark">
+                  {{ game.operation }}</a>
+              </td>
+              <td class="text-center" style="width:92px">
+                <a class="text-decoration-none text-dark">
+                  {{ game.max_number }}</a>
+              </td>
+            </tr>
             {% endfor %}
           <tbody>
         </table>
@@ -73,42 +70,39 @@
             mx-auto bg-danger bg-opacity-25 my-0 py-2">Anagram Hunt</h4>
           <thead>
             {% with order=request.GET.order dir=request.GET.direction %}
-              <tr>
-                <th><a class="text-decoration-none text-dark">Player
-                </a></th>
-                <th><a class="text-decoration-none text-dark">Score
-                </a></th>
-                <th><a class="text-decoration-none text-dark">Date/Time
-                </a></th>
-                <th><a class="text-decoration-none text-dark">Word Length
-                </a></th>
-              </tr>
+            <tr>
+              <th><a class="text-decoration-none text-dark">Player
+              </a></th>
+              <th><a class="text-decoration-none text-dark">Score
+              </a></th>
+              <th><a class="text-decoration-none text-dark">Date/Time
+              </a></th>
+              <th><a class="text-decoration-none text-dark">Word Length
+              </a></th>
+            </tr>
             {% endwith %}
           </thead>
           <tbody>
-            {% comment %} {% for game in game_list|slice:":20" %} {% endcomment %}
             {% for game in games.angr_list %}
-              {% comment %} {% if game.game_title_id == 2 %} {% endcomment %}
-              <tr>
-                <td style="width:200px">
-                  <a href="{% url 'games:user' game.user.username %}?order={{ order }}&direction={{ direction }}">
-                    {{ game.user.username }}</a>
-                </td>
-                <td style="width:60px">
-                  <a class="text-decoration-none text-dark">
-                    {{ game.score }}</a>
-                </td>
-                <td style="width:200px">
-                  <a class="text-decoration-none text-dark">
-                    {{ game.timestamp }}</a>
-                </td>
-                <td class="text-center" style="width:105px">
-                  <a class="text-decoration-none text-dark">
-                    {{ game.word_length }}</a>
-                </td>
-              </tr>
-              {% endfor %}
-              {% comment %} {% endif %} {% endcomment %}
+            <tr>
+              <td style="width:200px">
+                <a href="{% url 'games:user' game.user.username %}?order={{ order }}&direction={{ direction }}">
+                  {{ game.user.username }}</a>
+              </td>
+              <td style="width:60px">
+                <a class="text-decoration-none text-dark">
+                  {{ game.score }}</a>
+              </td>
+              <td style="width:200px">
+                <a class="text-decoration-none text-dark">
+                  {{ game.timestamp }}</a>
+              </td>
+              <td class="text-center" style="width:105px">
+                <a class="text-decoration-none text-dark">
+                  {{ game.word_length }}</a>
+              </td>
+            </tr>
+            {% endfor %}
           <tbody>
         </table>
       </div>

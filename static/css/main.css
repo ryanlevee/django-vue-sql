@@ -223,19 +223,21 @@ tr a:hover {
   margin: 0 1.3rem 1.5rem 0 !important;
 }
 
-.play-games-div,
-.play-games-button {
+/* #welcome-button, */
+#play-games-button {
   transition: transform .3s;
 }
 
-.play-games-div:hover,
-.play-games-button:hover {
+/* #welcome-button:hover, */
+#play-games-button:hover {
   transform: scale(1.02);
 }
 
-.play-games-button img {
+/*
+#play-games-button img {
   transition: transform .3s;
 }
-.play-games-button:hover img {
+
+#play-games-button:hover img {
   transform: scale(1.07);
-}
+} */

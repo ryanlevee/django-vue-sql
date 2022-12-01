@@ -8,12 +8,10 @@
 <link rel="stylesheet" href="{% static 'css/bootstrap-multiselect(by_davidstutz).css' %}">
 <script src="{% static 'js/bootstrap-multiselect-by_davidstutz.js' %}" ></script>
 <script src="{% static 'js/bootstrap.min-dropdowns.js' %}" ></script>
-{% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.2/js/bootstrap-multiselect.min.js" integrity="sha512-lxQ4VnKKW7foGFV6L9zlSe+6QppP9B2t+tMMaV4s4iqAv4iHIyXED7O+fke1VeLNaRdoVkVt8Hw/jmZ+XocsXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> {% endcomment %}
 
 <div class="card border-primary m-auto my-3 px-3 pt-3 pb-5"
   style="max-width: 50rem">
   <h3 class="text-center">Play2Learn Job Application</h2>
-  {% comment %} <form method="POST" enctype="multipart/form-data" class="container post-form" name="job-form"> {% endcomment %}
   <form method="POST" enctype="multipart/form-data" class="container post-form" >
       {% csrf_token %}
       <div class="form-row d-flex">
@@ -49,11 +47,9 @@
         <div class="form-group col-md-6 px-3 me-1">
           {{ form.start_date|as_crispy_field }}
         </div>
-
         <div class="form-group container col-md-6">
           <div id="div_id_available_days" class="row mb-3 m-0 me-2 p-0">
             <label for="id_available_days" class="form-label">Available Days to Work<span class="asteriskField">*</span></label>
-
             <select id="id_available_days" name="available_days" class="col select form-control text-start" multiple="multiple" >
               <option value="monday">Monday</option>
               <option value="tuesday">Tuesday</option>
@@ -61,14 +57,8 @@
               <option value="thursday">Thursday</option>
               <option value="friday">Friday</option>
             </select>
-
           </div>
         </div>
-{% comment %}
-        <div class="form-group col-md-6 px-4">
-          {{ form.available_days|as_crispy_field  }}
-        </div>
-{% endcomment %}
       </div>
       <div class="form-row d-flex">
         <div class="form-group col px-3">
@@ -87,11 +77,6 @@
       </div>
       <div class="form-row d-flex">
         <div class="form-group col px-3">
-          {% comment %}
-          <button class="form-control btn btn-success">
-            Apply
-          </button>
-          {% endcomment %}
           <button class="btn btn-success w-100">Submit</button>
         </div>
       </div>

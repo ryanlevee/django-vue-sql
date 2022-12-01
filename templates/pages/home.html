@@ -11,7 +11,6 @@
   };
   function openBootstrapPopup() {
     if (document.cookie.indexOf("FooBar=true") == -1) {
-      // then do nothing
       document.cookie = "FooBar=true; max-age=18000"; // 86400: seconds in a day
       $("#welcome-note").modal('show');
     }
@@ -26,37 +25,37 @@
   }
 </script>
 <section class="home-page-section">
-  <section id="welcome" class="">
-    <div class="bg-success bg-opacity-75 py-3 border-topborder-bottom border-success border-2">
-      <div class="d-flex flex-column pb-0 bg-info bg-opacity-25 mx-auto">
-        <h2 class="fw-normal fs-1 text-center mt-2 pt-1">Welcome to Play2Learn!</h2>
-      </div>
-    </div>
-  </section>
-  <section class="play-games-button-section">
-    <div class="container-fluid position-relative">
-      <div id="flag-div" class="position-absolute" style="top:-.5vh;left:4vw;width:4%">
-        <a data-bs-toggle="modal" data-bs-target="#welcome-note" href="#" >
-          <img id="flag" src="{% static 'images/swallowtail_flag_down_cmpr.png' %}" class="w-100"
-            style="box-shadow:-1px -1px 2px #8424246b" />
-          <img id="alert" src="{% static 'images/alert_filled.png' %}" class="position-absolute"/>
+  <section id="welcome-playbutton" class="mt-2" style="">
+      <div id="welcome-button" class="position-relative mx-auto bg-dark bg-opacity-25 rounded border-0"
+        style="width:65%;height:25vh">
+        <a id="flag-div" class="position-absolute" style="top:-.1rem;left:1rem" data-bs-toggle="modal" data-bs-target="#welcome-note" href="#">
+          <img id="flag" src="{% static 'images/swallowtail_flag_down_cmpr.png' %}"
+            style="box-shadow:-1px -1px 2px #8424246b;width:3rem;opacity:0.90"/>
+          <img id="alert" src="{% static 'images/alert_filled.png' %}"
+            class="position-absolute"
+            style="width:1.75rem!important"/>
         </a>
+        <div class="position-absolute bottom-0 start-0 ms-5 pb-3 ps-5" style="width:45%">
+          <form action="{% url 'play:play' %}" class="">
+            <button id="play-games-button" class="rounded border-0 col-12 bg-info bg-opacity-50 text-white" style="height:21vh">
+              <img src="{% static 'images/play_games_button_trn_white.png' %}" alt="play_games_button_image" class="img-fluid col-7 mt-4" />
+            </button>
+          </form>
+        </div>
+        <div class="position-absolute bottom-0 end-0 me-5 pb-3 pe-5" style="width:43%">
+          <form action="{% url 'games:list' %}" class="">
+            <button id="play-games-button" class="rounded border-0 col-12 bg-success bg-opacity-50 text-white" style="height:21vh">
+              <img src="{% static 'images/checkered_flags_leaderboards.png' %}" alt="play_games_button_image" class="img-fluid col-9 mt-4" />
+            </button>
+          </form>
+        </div>
       </div>
-    <!-- <div class="row" -->
-      <form action="{% url 'play:play' %}" class="py-3 text-center">
-        <button class="play-games-button col-6 mx-auto py-4 rounded border-0" style="background-color:#ffbd5a;">
-          <img src="{% static 'images/play_games_button_trn2.png' %}"
-            alt="play_games_button_image" class="img-fluid col-10 col-lg-3 col-sm-5" />
-        </button>
-      </form>
-    </div>
   </section>
-  <section class="review-carousel-section bg-dark bg-opacity-25 mb-3 mt-1">
+  <section class="review-carousel-section bg-dark bg-opacity-25 my-3">
     {% review_carousel %}
   </section>
   <section id="high-scores-section">
-    <!-- <div class="py-2 bg-secondary"></div> -->
-    <div class="bg-success bg-opacity-75 py-3 mb-2
+    <div class="bg-success bg-opacity-75 py-3
       border-top border-bottom border-success border-2">
       <div class="container-fluid pb-4
         bg-info bg-opacity-25">
