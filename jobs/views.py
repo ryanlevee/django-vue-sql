@@ -33,7 +33,7 @@ class JobAppView(CreateView):
                 f'{subject}',           # subject
                 f'{content}',       	# message
                 f'{ADMIN_EMAIL}',	    # from
-                [f'{ADMIN_EMAIL}'],     # to
+                f'{ADMIN_EMAIL}',       # to
                 fail_silently=False,
             )
             print(data)
