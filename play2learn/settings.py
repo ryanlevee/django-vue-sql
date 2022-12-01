@@ -76,7 +76,7 @@ MIDDLEWARE = [
     ]
 
 # django-tracking2
-TRACK_SUPERUSERS = True
+TRACK_SUPERUSERS = False
 TRACK_REFERER = True
 
 ROOT_URLCONF = 'play2learn.urls'
