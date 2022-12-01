@@ -1,6 +1,7 @@
 import html
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView
+import requests
 
 # from common.utils.email import send_email
 from django.core.mail import send_mail
@@ -18,33 +19,32 @@ class JobAppView(CreateView):
 
 
     def form_valid(self, form):
-            data = form.cleaned_data
-            to = ADMIN_EMAIL
-            subject = 'Play2Learn Application for Game Designer Received'
-            content = 'Hey Play2Learn Admin!\n\'Application\' details below:\n'
-            for key, value in data.items():
-                label = key.replace('_', ' ').title()
-                entry = html.escape(str(value), quote=False)
-                if self.request.user.is_authenticated:
-                    if key == "email":
-                        label = 'From'
-                        entry = f'{self.request.user} ({self.request.user.email})'
-                if label == 'Available Days':
-                    entry = entry.replace('\'','').strip('][').split(', ')
-                content += f'{label}: {entry}\n'
+        data = form.cleaned_data
+        to = ADMIN_EMAIL
+        subject = 'Play2Learn Application for Game Designer Received'
+        content = 'Hey Play2Learn Admin!\n\'Application\' details below:\n'
+        for key, value in data.items():
+            label = key.replace('_', ' ').title()
+            entry = html.escape(str(value), quote=False)
+            if label == 'Available Days':
+                entry = entry.replace('\'','').strip('][').split(', ')
+            content += f'{label}: {entry}\n'
 
-            send_mail(
-                f'{subject}',           # subject
-                f'{content}',       	# message
-                f'{ADMIN_EMAIL}',	    # from
-                [f'{ADMIN_EMAIL}'],     # to
-                fail_silently=False,
-            )
-            print(data)
-            print(to, subject, content)
-            print()
+        send_mail(
+            f'{subject}',           # subject
+            f'{content}',       	# message
+            f'{ADMIN_EMAIL}',	    # from
+            [f'{ADMIN_EMAIL}'],     # to
+            fail_silently=False,
+        )
+        print(data)
+        print(to, subject, content)
+        print()
+
+        try:
             return super().form_valid(form)
-
+        except requests.exceptions.HTTPError:
+            return self.success_url
 
 class JobAppThanksView(TemplateView):
     template_name = 'jobs/thanks.html'
