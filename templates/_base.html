@@ -164,10 +164,9 @@
   </nav>
 <p {% if 'anagram-play' in request.path or 'math-game' in request.path %}
 class="text-center position-absolute w-100 fs-6 text-black"
-style="z-index:1;" {% elif 'job-app' in request.path %}
-class="text-end position-absolute pe-3 w-100 fs-6 opacity-75 fw-light"
+style="z-index:1;"
 {% else %}
-class="text-center position-absolute w-100 fs-6 opacity-75 fw-light"
+class="text-end position-absolute pe-3 w-100 fs-6 opacity-75 fw-light"
 {% endif %}>demo website created by Ryan Levee</p>
 {% endblock header %}
 </header>
