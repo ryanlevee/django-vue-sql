@@ -27,25 +27,27 @@
 <section class="home-page-section">
   <section id="" class="container mt-4" style="">
     <div id="welcome-div" class="row position-relative bg-dark bg-opacity-25 rounded border-0" style="height:24vh">
-      <a id="flag-div" class="position-absolute w-auto" style="top:-.1rem;left:1rem" data-bs-toggle="modal" data-bs-target="#welcome-note" href="#">
+      <a id="flag-div" class="position-absolute w-auto" style="top:-.1rem;left:1rem" data-bs-toggle="modal"
+        data-bs-target="#welcome-note" href="#">
         <img id="flag" src="{% static 'images/swallowtail_flag_down_cmpr.png' %}"
-          style="box-shadow:-1px -1px 2px #8424246b;width:3.5rem;opacity:0.90"/>
-        <img id="alert" src="{% static 'images/alert_filled.png' %}"
-          class="position-absolute start-0"
-          style="width:2rem!important"/>
+        style="box-shadow:-1px -1px 2px #8424246b;width:3.5rem;opacity:0.90"/>
+        <img id="alert" src="{% static 'images/alert_filled.png' %}" class="position-absolute start-0"
+        style="width:2rem!important"/>
       </a>
       <div class="d-flex justify-content-evenly">
         <div id="welcome-button" class="col-4 align-items-center rounded bg-info bg-opacity-50 my-3">
           <form action="{% url 'play:play' %}" class="h-100">
             <button id="" class="border-0 bg-transparent h-100" style="">
-              <img src="{% static 'images/play_games_button_trn_white.png' %}" alt="play_games_button_image" class="img-fluid px-5 col-12 col-xl-9 col-xxl-10" style=""/>
+              <img src="{% static 'images/play_games_button_trn_white.png' %}" alt="play_games_button_image"
+              class="img-fluid px-5 col-12 col-xl-9 col-xxl-10" style=""/>
             </button>
           </form>
         </div>
         <div id="welcome-button" class="col-4 align-items-center rounded bg-success bg-opacity-50 my-3">
           <form action="{% url 'games:list' %}" class="h-100">
             <button id="" class="border-0 bg-transparent h-100" style="">
-              <img src="{% static 'images/checkered_flags_leaderboards.png' %}" alt="play_games_button_image" class="img-fluid px-5 col-12 col-xl-9 col-xxl-10" style=""/>
+              <img src="{% static 'images/checkered_flags_leaderboards.png' %}" alt="play_games_button_image"
+              class="img-fluid px-5 col-12 col-xl-9 col-xxl-10" style=""/>
             </button>
           </form>
         </div>
@@ -57,9 +59,8 @@
   </section>
   <section id="high-scores-section">
     <div class="bg-success bg-opacity-75 py-3
-      border-top border-bottom border-success border-2">
-      <div class="container-fluid pb-4
-        bg-info bg-opacity-25">
+    border-top border-bottom border-success border-2">
+      <div class="container-fluid pb-4 bg-info bg-opacity-25">
         <h3 class="text-center pt-3">High Scores:</h3>
         <div class="d-flex justify-content-center">
           <div class="row justify-content-center w-75">
@@ -86,7 +87,8 @@
         <p>Welcome to my demo website.</p>
         <p>This site was created using Django Python. The games are written in Vue.js.</p>
         <p>
-          Users can create accounts, play games, track their scores, check leaderboards, submit reviews, apply for faux-jobs for a faux-company called "Play2Learn", and more.
+          Users can create accounts, play games, track their scores, check leaderboards, submit reviews, apply for
+          faux-jobs for a faux-company called "Play2Learn", and more.
         </p>
         <p>
           My goal here is to demonstrate a scalable, seamless integration between multiple frameworks and languages.
