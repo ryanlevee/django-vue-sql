@@ -25,31 +25,32 @@
   }
 </script>
 <section class="home-page-section">
-  <section id="welcome-playbutton" class="mt-2" style="">
-      <div id="welcome-button" class="position-relative mx-auto bg-dark bg-opacity-25 rounded border-0"
-        style="width:65%;height:25vh">
-        <a id="flag-div" class="position-absolute" style="top:-.1rem;left:1rem" data-bs-toggle="modal" data-bs-target="#welcome-note" href="#">
-          <img id="flag" src="{% static 'images/swallowtail_flag_down_cmpr.png' %}"
-            style="box-shadow:-1px -1px 2px #8424246b;width:3rem;opacity:0.90"/>
-          <img id="alert" src="{% static 'images/alert_filled.png' %}"
-            class="position-absolute"
-            style="width:1.75rem!important"/>
-        </a>
-        <div class="position-absolute bottom-0 start-0 ms-5 pb-3 ps-5" style="width:45%">
-          <form action="{% url 'play:play' %}" class="">
-            <button id="play-games-button" class="rounded border-0 col-12 bg-info bg-opacity-50 text-white" style="height:21vh">
-              <img src="{% static 'images/play_games_button_trn_white.png' %}" alt="play_games_button_image" class="img-fluid col-7 mt-4" />
+  <section id="" class="container mt-4" style="">
+    <div id="welcome-div" class="row position-relative bg-dark bg-opacity-25 rounded border-0" style="height:24vh">
+      <a id="flag-div" class="position-absolute w-auto" style="top:-.1rem;left:1rem" data-bs-toggle="modal" data-bs-target="#welcome-note" href="#">
+        <img id="flag" src="{% static 'images/swallowtail_flag_down_cmpr.png' %}"
+          style="box-shadow:-1px -1px 2px #8424246b;width:3.5rem;opacity:0.90"/>
+        <img id="alert" src="{% static 'images/alert_filled.png' %}"
+          class="position-absolute start-0"
+          style="width:2rem!important"/>
+      </a>
+      <div class="d-flex justify-content-evenly">
+        <div id="welcome-button" class="col-4 align-items-center rounded bg-info bg-opacity-50 my-3">
+          <form action="{% url 'play:play' %}" class="h-100">
+            <button id="" class="border-0 bg-transparent h-100" style="">
+              <img src="{% static 'images/play_games_button_trn_white.png' %}" alt="play_games_button_image" class="img-fluid px-5" style=""/>
             </button>
           </form>
         </div>
-        <div class="position-absolute bottom-0 end-0 me-5 pb-3 pe-5" style="width:43%">
-          <form action="{% url 'games:list' %}" class="">
-            <button id="play-games-button" class="rounded border-0 col-12 bg-success bg-opacity-50 text-white" style="height:21vh">
-              <img src="{% static 'images/checkered_flags_leaderboards.png' %}" alt="play_games_button_image" class="img-fluid col-9 mt-4" />
+        <div id="welcome-button" class="col-4 align-items-center rounded bg-success bg-opacity-50 my-3">
+          <form action="{% url 'games:list' %}" class="h-100">
+            <button id="" class="border-0 bg-transparent h-100" style="">
+              <img src="{% static 'images/checkered_flags_leaderboards.png' %}" alt="play_games_button_image" class="img-fluid px-5" style=""/>
             </button>
           </form>
         </div>
       </div>
+    </div>
   </section>
   <section class="review-carousel-section bg-dark bg-opacity-25 my-3">
     {% review_carousel %}

@@ -223,10 +223,11 @@ tr a:hover {
   margin: 0 1.3rem 1.5rem 0 !important;
 }
 
-#play-games-button {
-  transition: transform .3s;
+
+#welcome-button {
+  transition: transform .3s ease-out;
 }
 
-#play-games-button:hover {
+#welcome-button:hover {
   transform: scale(1.02);
 }
