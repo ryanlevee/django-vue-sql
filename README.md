@@ -1,16 +1,102 @@
-# Django and Vue-based "Play2Learn" Website with SQL Database
+Play2Learn Website
+==================
 
-This is a website that: 
+This repository contains the source code for the Play2Learn website, a full-stack web application built using Django and Vue.js. This project was developed as part of my portfolio to demonstrate my skills in web development.
 
-1. Allows users to play games, track their "Math Facts" and "Anagram Hunt" game scores, see leaderboards, create profiles, log-in/out, change passwords, and more.
+Table of Contents
+-----------------
 
-2. Allows administrators to run the site and alter every aspect of it via Django Admin.
+*   Introduction
+*   Features
+*   Technologies Used
+*   Installation
+*   Usage
+*   Contributing
+*   License
+*   Contact
 
+Introduction
+------------
 
-# To run:
+Play2Learn is an educational platform designed to provide interactive learning experiences through various games and activities. The website allows users to create accounts, play games, track their scores, check leaderboards, submit reviews, apply for faux-jobs for a faux-company called "Play2Learn", and more.
 
-activate venv in root folder
+My goal here is to demonstrate a scalable, seamless integration between multiple frameworks and languages.
 
-install requirements.txt, THEN requirements2.txt (requirements2 MUST overwrite requirements1)
+Features
+--------
 
-keys and passwords available upon request OR manually setup the CSV files instead of using SQL
+*   User authentication and profile management
+*   Interactive games (Math Facts, Anagram Hunt) written in Vue.js
+*   Game leaderboards
+*   User reviews and ratings
+*   Contact form for user inquiries
+*   Job application form
+
+Technologies Used
+-----------------
+
+*   **Backend:** Django, Django REST framework
+*   **Frontend:** Vue.js, Bootstrap
+*   **Database:** PostgreSQL, MySQL
+*   **Other:** SendGrid for email notifications, AWS S3 for static and media file storage
+
+Installation
+------------
+
+1.  Clone the repository:
+    
+        git clone https://github.com/yourusername/play2learn.git
+        cd play2learn
+        
+    
+2.  Create and activate a virtual environment:
+    
+        python -m venv venv
+        source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+        
+    
+3.  Install the required dependencies:
+    
+        pip install -r requirements.txt
+        
+    
+4.  Set up the database:
+    
+        python manage.py migrate
+        
+    
+5.  Create a superuser:
+    
+        python manage.py createsuperuser
+        
+    
+6.  Run the development server:
+    
+        python manage.py runserver
+        
+    
+
+Usage
+-----
+
+*   Access the website at `http://127.0.0.1:8000/`
+*   Register for an account or log in with an existing account
+*   Click the "Play Games" button to choose a Vue.js game
+*   If you are logged in, your scores will be uploaded to an SQL database and can be immediately viewed on the "My Game Tracking" page
+*   Top scores will be included on the "Leaderboard" page
+*   Submit reviews for games, which will show up in the carousel once approved
+*   Use the contact form to send inquiries
+*   Apply for jobs through the job application form
+
+If you would like superuser access to see the SQL back end via Django Admin, let me know. The full source code for the entire website is also available in my GitHub portfolio.
+
+Contributing
+------------
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+License
+-------
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
