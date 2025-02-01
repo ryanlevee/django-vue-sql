@@ -20,7 +20,7 @@ Introduction
 
 Play2Learn is an educational platform designed to provide interactive learning experiences through various games and activities. The website allows users to create accounts, play games, track their scores, check leaderboards, submit reviews, apply for faux-jobs for a faux-company called "Play2Learn", and more.
 
-My goal here is to demonstrate a scalable, seamless integration between multiple frameworks and languages.
+This website demonstrates a scalable, seamless integration between multiple frameworks and languages.
 
 Features
 --------
