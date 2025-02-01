@@ -45,7 +45,7 @@ Installation
 
 1.  Clone the repository:
     
-        git clone https://github.com/yourusername/play2learn.git
+        git clone https://github.com/ryanlevee/play2learn.git
         cd play2learn
         
     
