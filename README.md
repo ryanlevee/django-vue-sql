@@ -1,7 +1,7 @@
 Play2Learn Website
 ==================
 
-This repository contains the source code for the Play2Learn website, a full-stack web application built using Django and Vue.js. This was the first project I completed while in the Full Stack Software Development program at Loyola Marymount University.
+This repository contains the source code for the Play2Learn website, a full-stack web application built using Django and Vue.js. This was the main project I completed while in the Full Stack Software Development program at Loyola Marymount University.
 
 Table of Contents
 -----------------
