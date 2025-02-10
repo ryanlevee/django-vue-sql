@@ -26,7 +26,7 @@ Features
 --------
 
 *   User authentication and profile management
-*   Interactive games (Math Facts, Anagram Hunt) written in Vue.js
+*   Interactive games written in Vue.js
 *   Game leaderboards
 *   User reviews and ratings
 *   Contact form for user inquiries
