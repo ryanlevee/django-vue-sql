@@ -37,7 +37,7 @@ def record_score(request):
     user_id = request.user.id
 
     if title == Game.Anagram_Hunt:
-        new_score = Game(title=title, score=score, user_id=user_id,
+        new_score = Game(score=score, user_id=user_id,
                          word_length=word_length, game_title_id=game_title_id)
         new_score.save()
 

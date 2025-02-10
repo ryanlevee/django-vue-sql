@@ -9,7 +9,7 @@
   <h2 class="text-center bg-info bg-opacity-25 py-2 my-2
     mx-auto w-100 border-top border-2 border-bottom border-1
     {% if 'games/user' in request.get_full_path %}
-    mb-4">Player Game Tracking</h2>
+    mb-4">Player Game Tracking - {{ games.username }}</h2>
     {% else %}
     ">Leaderboards</h2>
     {% endif %}

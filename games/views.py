@@ -78,6 +78,9 @@ class GameListView(ListView):
         context['direction'] = direction
         context['order_fields'] = list(order_fields.keys())[:-1]
 
+        if 'username' in self.kwargs:
+            username = self.kwargs['username']
+
         return context
 
     def get_ordering(self):
@@ -114,12 +117,14 @@ class GameListView(ListView):
     def get_queryset(self):
         ordering = self.get_ordering()
         qs = Game.objects.all()
+        username = ''
 
         if 'username' in self.kwargs:
             username = self.kwargs['username']
             qs = qs.filter(user__username=username)
 
         queryset = {
+            'username': username,
             'user': qs.prefetch_related('user').order_by(ordering),
             'angr_list': qs.filter(game_title_id=2).order_by(ordering)[:16],
             'math_list': qs.filter(game_title_id=1).order_by(ordering)[:16]

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     # Third-pary apps
     'crispy_forms',
-    "crispy_bootstrap5",
+    'crispy_bootstrap5',
     'allauth',
     'allauth.account',
     'tracking',

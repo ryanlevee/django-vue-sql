@@ -10,12 +10,12 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveConstraint(
-            model_name='review',
-            name='one_review_per_user_per_game_title',
-        ),
-        migrations.AddConstraint(
-            model_name='review',
-            constraint=models.UniqueConstraint(fields=('user', 'game_title'), name='one_review_per_user_per_title'),
-        ),
+        # migrations.RemoveConstraint(
+        #     model_name='review',
+        #     name='one_review_per_user_per_game_title',
+        # ),
+        # migrations.AddConstraint(
+        #     model_name='review',
+        #     constraint=models.UniqueConstraint(fields=('user', 'game_title'), name='one_review_per_user_per_title'),
+        # ),
     ]

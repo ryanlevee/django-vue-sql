@@ -27,8 +27,7 @@
 <section class="home-page-section">
   <section id="" class="container mt-4" style="">
     <div id="welcome-div" class="row position-relative bg-dark bg-opacity-25 rounded border-0" style="height:24vh">
-      <a id="flag-div" class="position-absolute w-auto" style="top:-.1rem;left:1rem" data-bs-toggle="modal"
-        data-bs-target="#welcome-note" href="#">
+      <a id="flag-div" class="position-absolute w-auto" style="top:-.1rem;left:1rem" data-bs-toggle="modal" data-bs-target="#welcome-note" href="#">
         <img id="flag" src="{% static 'images/swallowtail_flag_down_cmpr.png' %}"
         style="box-shadow:-1px -1px 2px #8424246b;width:3.5rem;opacity:0.90"/>
         <img id="alert" src="{% static 'images/alert_filled.png' %}" class="position-absolute start-0"
@@ -39,7 +38,7 @@
           <form action="{% url 'play:play' %}" class="h-100">
             <button id="" class="border-0 bg-transparent h-100" style="">
               <img src="{% static 'images/play_games_button_trn_white.png' %}" alt="play_games_button_image"
-              class="img-fluid px-5 col-12 col-xl-9 col-xxl-10" style=""/>
+              class="img-fluid px-md-5 col-12 col-xl-9 col-xxl-10" style=""/>
             </button>
           </form>
         </div>
@@ -47,7 +46,7 @@
           <form action="{% url 'games:list' %}" class="h-100">
             <button id="" class="border-0 bg-transparent h-100" style="">
               <img src="{% static 'images/checkered_flags_leaderboards.png' %}" alt="play_games_button_image"
-              class="img-fluid px-5 col-12 col-xl-9 col-xxl-10" style=""/>
+              class="img-fluid px-md-5 col-12 col-xl-9 col-xxl-10" style=""/>
             </button>
           </form>
         </div>
