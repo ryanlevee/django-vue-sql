@@ -13,8 +13,6 @@ import os
 from pathlib import Path
 import dj_database_url
 
-WEBSITE_RUN_FROM_PACKAGE = 0
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING:
