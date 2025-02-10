@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 import dj_database_url
 
+WEBSITE_RUN_FROM_PACKAGE = 0
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING:
@@ -22,11 +24,11 @@ SECRET_KEY = os.environ.get('SENDGRID_API_KEY')
 VUE_DIST = BASE_DIR / "vue-games" / "dist"  # vue-cli path - Django3 style
 
 ALLOWED_HOSTS = [
-    # 'play2learn.herokuapp.com',
+    'play2learn.herokuapp.com',
     'django-vue-sql.herokuapp.com',
-    ]
+]
 
-INTERNAL_IPS = [ # Necessary for the Debug Toolbar
+INTERNAL_IPS = [  # Necessary for the Debug Toolbar
     '127.0.0.1',
 ]
 
@@ -60,7 +62,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-DEFAULT_AUTO_FIELD='django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
@@ -73,7 +75,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'tracking.middleware.VisitorTrackingMiddleware',
-    ]
+]
 
 # django-tracking2
 TRACK_SUPERUSERS = False
@@ -101,8 +103,8 @@ WSGI_APPLICATION = 'play2learn.wsgi.application'
 # WSGI_APPLICATION = 'django-vue-sql.wsgi.application'
 
 DATABASES = {
-             'default' : dj_database_url.config()
-             }
+    'default': dj_database_url.config()
+}
 
 # EMAIL
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -131,15 +133,15 @@ AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = 'pages:homepage'
 
-## django-allauth settings
-ACCOUNT_AUTHENTICATION_METHOD = 'email' # Default: 'username'
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1 # Default: 3
-ACCOUNT_EMAIL_REQUIRED = True # Default: False
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # Default: 'optional'
-ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5 # Default: 5
-ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300 # Default 300
-ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login' # Default: '/'
-ACCOUNT_USERNAME_REQUIRED = False # Default: True
+# django-allauth settings
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Default: 'username'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1  # Default: 3
+ACCOUNT_EMAIL_REQUIRED = True  # Default: False
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # Default: 'optional'
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5  # Default: 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300  # Default 300
+ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'  # Default: '/'
+ACCOUNT_USERNAME_REQUIRED = False  # Default: True
 
 ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
 
@@ -168,12 +170,12 @@ USE_TZ = True
 # Static files
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'django-vue-sql-aws' # REPLACE WITH BUCKET NAME
+AWS_STORAGE_BUCKET_NAME = 'django-vue-sql-aws'  # REPLACE WITH BUCKET NAME
 # AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 # AWS_S3_CUSTOM_DOMAIN = f's3://{AWS_STORAGE_BUCKET_NAME}'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.us-west-1.amazonaws.com'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
-AWS_DEFAULT_ACL = None # Use S3 bucket's setting
+AWS_DEFAULT_ACL = None  # Use S3 bucket's setting
 
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
@@ -191,7 +193,7 @@ STATICFILES_DIRS = [
 ]
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/' # Does not tell to look in 'static' folder
+STATIC_URL = '/static/'  # Does not tell to look in 'static' folder
 
 if os.environ.get('ENVIRONMENT') != 'production':
     from .local_settings import *
