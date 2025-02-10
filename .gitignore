@@ -21,6 +21,7 @@ zzz_private
 *test*
 
 play2learn/local_settings.py
+play2learn_dir/local_settings.py
 
 .DS_Store
 node_modules
