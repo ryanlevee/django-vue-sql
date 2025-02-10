@@ -22,8 +22,9 @@ SECRET_KEY = os.environ.get('SENDGRID_API_KEY')
 VUE_DIST = BASE_DIR / "vue-games" / "dist"  # vue-cli path - Django3 style
 
 ALLOWED_HOSTS = [
-    'play2learn.herokuapp.com',
-    'django-vue-sql.herokuapp.com',
+    # 'play2learn.herokuapp.com',
+    # 'django-vue-sql.herokuapp.com',
+    'ryanlevee.pythonanywhere.com'
 ]
 
 INTERNAL_IPS = [  # Necessary for the Debug Toolbar
