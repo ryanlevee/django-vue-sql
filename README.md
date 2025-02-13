@@ -1,7 +1,7 @@
 Play2Learn Platform
 ==================
 
-This repository contains the source code for the Play2Learn platform, a full-stack web application built using Python and JavaScript with Django and Vue.js. This was the main project I completed while in the Full Stack Software Development program at Loyola Marymount University.
+This repository contains the source code for the Play2Learn platform, a full-stack web application built using Python and JavaScript with Django and Vue.js. This was the main project I completed while in the Full Stack Software Development program at Loyola Marymount University. It demonstrates a scalable, seamless integration between multiple frameworks and languages.
 
 Table of Contents
 -----------------
@@ -18,9 +18,7 @@ Table of Contents
 Introduction
 ------------
 
-Play2Learn is an educational platform designed to provide interactive learning experiences through various games and activities. The website allows users to create accounts, play games, track their scores, check leaderboards, submit reviews, apply for faux-jobs for a faux-company called "Play2Learn", and more.
-
-This website demonstrates a scalable, seamless integration between multiple frameworks and languages.
+Play2Learn is an educational platform designed to provide interactive learning experiences through games and activities. Users can create accounts, play games, track their scores, check leaderboards, submit reviews, apply for faux-jobs, and more.
 
 Features
 --------
