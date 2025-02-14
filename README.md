@@ -49,26 +49,31 @@ Installation
     
 2.  Create and activate a virtual environment:
     
-        python -m venv venv
-        source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+        python -m venv .venv
+        source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
         
     
-3.  Install the required dependencies:
+3.  Install the required dependencies in requirements.txt:
     
         pip install -r requirements.txt
         
     
-4.  Set up the database:
+4.  Install the required dependencies in requirements2.txt:
+    
+        pip install -r requirements2.txt
+        
+    
+5.  Set up the database:
     
         python manage.py migrate
         
     
-5.  Create a superuser:
+6.  Create a superuser:
     
         python manage.py createsuperuser
         
     
-6.  Run the development server:
+7.  Run the development server:
     
         python manage.py runserver
         
@@ -86,7 +91,7 @@ Usage
 *   Use the contact form to send inquiries
 *   Apply for jobs through the job application form
 
-If you would like superuser access to see the SQL back end via Django Admin, let me know. The full source code for the entire website is also available in my GitHub portfolio.
+If you would like superuser access to see the SQL back end via Django Admin, let me know.
 
 Contributing
 ------------
